@@ -75,11 +75,9 @@
 /* ספציפית לסרטונים בדף הנחיתה */
 .story-video iframe,
 #about iframe {
-  display: block;
-  width: 100%;         /* שייתפס על כל הרוחב */
-  max-width: 300px;    /* אותו max-width שיש בסליידרים */
-  margin: 0 auto; /* מרכז את הוידאו */
-  border-radius: 12px; /* פינות מעוגלות */
+  max-width: 300px;
+  width: 100%;
+  margin: 0 auto;
 }
       
     .slider-item > div {
@@ -128,16 +126,15 @@
   <div class="container mx-auto px-6 text-center">
     
     <!-- וידאו במרכז -->
-    <div class="w-full max-w-lg mx-auto rounded-xl overflow-hidden shadow-lg mb-10">
-      <div class="relative w-full overflow-hidden bg-[#D3E0EA]" style="padding-top:56.25%;">
-        <iframe 
-          src="https://www.youtube.com/embed/_2k1RqACMlM?autoplay=1&mute=1&loop=1&playlist=_2k1RqACMlM&controls=0&modestbranding=1&rel=0"
-          class="absolute top-0 left-0 w-full h-full"
-          frameborder="0"
-          allow="autoplay; encrypted-media"
-          allowfullscreen>
-        </iframe>
-      </div>
+    <div class="w-full max-w-lg mx-auto rounded-xl overflow-hidden shadow-lg mb-10 flex justify-center">
+      <div class="story-video">
+  <iframe 
+    src="https://www.youtube.com/embed/_2k1RqACMlM?autoplay=1&mute=1&loop=1&playlist=_2k1RqACMlM&controls=0&modestbranding=1&rel=0"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+</div>
     </div>
 
     <!-- טקסט -->
