@@ -717,5 +717,21 @@ window.onload = function () {
   );
 };
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+ 
+        // אפקט נשימה עדין
+        gsap.to("header .absolute.inset-0", {
+          scale: 1.03,
+          duration: 3,
+          yoyo: true,
+          repeat: -1,
+          ease: "sine.inOut"
+        });
+      }
+    }
+  );
+});
+</script>
 </body>
 </html>
