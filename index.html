@@ -6,138 +6,161 @@
     <title>דור | תוכן בלי פוזות</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap">
+
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
     <style>
         body {
             font-family: 'Heebo', sans-serif;
             scroll-behavior: smooth;
         }
-        .gradient-bg {
-            background: linear-gradient(180deg, #1687A7 0%, #276678 100%);
-        }
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
-        .portfolio-item:hover img {
-            transform: scale(1.05);
-        }
-        .infographic-item {
-            transition: all 0.3s ease;
-        }
-        .infographic-item:hover {
-            transform: translateY(-10px);
-        }
-        .section-fade {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        .section-fade.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .custom-color-primary {
-            color: #276678;
-        }
-        .custom-color-secondary {
-            color: #F6F5F5;
-        }
-        .custom-bg-primary {
-            background-color: #276678;
-        }
-        .custom-bg-secondary {
+        .gradient-bg { background: linear-gradient(180deg, #1687A7 0%, #276678 100%); }
+        .infographic-item { transition: all 0.3s ease; }
+        .infographic-item:hover { transform: translateY(-10px); }
+        .custom-color-primary { color: #276678; }
+        .custom-color-secondary { color: #F6F5F5; }
+        .custom-bg-primary { background-color: #276678; }
+        .custom-bg-secondary { background-color: #1687A7; }
+        .custom-bg-light { background-color: #D3E0EA; }
+        .custom-bg-white { background-color: #F6F5F5; }
+        .slider { scroll-snap-type: x mandatory; scroll-behavior: smooth; }
+        .slider-item { scroll-snap-align: start; }
+        .story-video { position: relative; width: 100%; overflow: hidden; }
+        @media (max-width: 1023px) { .story-video { padding-top: 177.78%; } }
+        @media (min-width: 1024px) { .story-video { height: 600px; } }
+        .story-video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+        /* כפתור חזרה למעלה */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
             background-color: #1687A7;
+            color: white;
+            padding: 12px 16px;
+            border-radius: 50%;
+            font-size: 20px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.3s ease;
+            z-index: 999;
         }
-        .custom-bg-light {
-            background-color: #D3E0EA;
+        #backToTop.show { opacity: 1; transform: translateY(0); }
+
+        /* תיקון כפתורי ה-Hero */
+        .bg-parallax {
+            pointer-events: none; 
+            z-index: 0;
         }
-        .custom-bg-white {
-            background-color: #F6F5F5;
-        }
-        .custom-border-primary {
-            border-color: #276678;
-        }
-        .custom-border-secondary {
-            border-color: #1687A7;
-        }
-        .slider {
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-        }
-        .slider-item {
-            scroll-snap-align: start;
+        #hero .container {
+            position: relative;
+            z-index: 1;
         }
     </style>
 </head>
 <body class="custom-bg-white text-gray-800">
-    <!-- Hero Section -->
-    <header class="min-h-screen flex items-center relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-r from-[#276678] to-[#1687A7] opacity-90"></div>
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col items-center text-center">
-                <h1 class="text-5xl md:text-7xl font-bold text mb-1">שלום, אני <span class="custom-color-secondary">דור</span></h1>
-                <p class="text-xl md:text-3xl text-[#D3E0EA] mb-8 font-light">תוכן בלי פוזות</p>
-                <div class="w-16 h-1 bg-[#D3E0EA] mb-6"></div>
-                <p class="text-lg md:text-xl text-white max-w-2xl mb-8">יוצר תוכן ומנהל סושיאל שמאמין באותנטיות מעל הכל.</p>
-                <div class="flex flex-wrap gap-4 justify-center">
-                    <a href="#portfolio" class="px-8 py-3 bg-white text-[#276678] rounded-full font-medium hover:bg-[#D3E0EA] transition duration-300 transform hover:scale-105">הצג עבודות</a>
-                    <a href="#contact" class="px-8 py-3 border-2 border-white text-white rounded-full font-medium hover:bg-white hover:text-[#276678] transition duration-300 transform hover:scale-105">צור קשר</a>
-                </div>
-            </div>
-        </div>
-        <svg class="absolute bottom-0 left-0 right-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120">
-            <path fill="#F6F5F5" fill-opacity="1" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
-        </svg>
-    </header>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 section-fade">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0">
-                    <!-- Video Container -->
-                    <div class="w-full max-w-md mx-auto rounded-xl overflow-hidden shadow-lg">
-                        <div class="aspect-w-16 aspect-h-9 bg-[#D3E0EA] flex items-center justify-center">
-                            <div class="text-center p-6">
-                                <iframe src="https://drive.google.com/file/d/1qPUO1cybSvoYN9q6UIfBdsdLsNGb6n4a/preview" width="600" height="480" allow="autoplay" ></iframe>
-                                    <path stroke-linecap="round" stroke-linejoin="Rround" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="md:w-1/2 md:pr-10">
-                    <h2 class="text-4xl font-bold mb-6 custom-color-primary">הסיפור שלי</h2>
-                    <p class="text-lg text-gray-600 mb-6">אני מאמין שתוכן אמיתי ואותנטי הוא המפתח ליצירת קשר משמעותי עם הקהל. בעולם מלא בתוכן מזויף ומשוכפל, אני מביא את הקול האמיתי והייחודי שלכם לקדמת הבמה.</p>
-                    <div class="flex flex-wrap gap-4">
-                        <div class="bg-[#D3E0EA] rounded-lg p-4 flex items-center">
-                            <div class="w-12 h-12 rounded-full bg-[#1687A7] flex items-center justify-center mr-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
-                                </svg>
-                            </div>
-                            <h4  class="font-bold mr-2">ניהול סושיאל</h4>
-                        </div>
-                        <div class="bg-[#D3E0EA] rounded-lg p-4 flex items-center">
-                            <div class="w-12 h-12 rounded-full bg-[#1687A7] flex items-center justify-center mr-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                </svg>
-                            </div>
-                            <h4  class="font-bold mr-2">יצירת תוכן</h4>
-                        </div>
-                        <div class="bg-[#D3E0EA] rounded-lg p-4 flex items-center">
-                            <div class="w-12 h-12 rounded-full bg-[#1687A7] flex items-center justify-center mr-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-                                </svg>
-                            </div>
-                            <h4  class="font-bold mr-2">מיתוג</h4>
-                        </div>
-                    </div>
-                </div>
+   <!-- Hero Section -->
+<header id="hero" class="min-h-screen flex items-center relative overflow-hidden section-fade">
+    <div class="absolute inset-0 bg-gradient-to-r from-[#276678] to-[#1687A7] opacity-90 bg-parallax"
+         style="z-index: -1; pointer-events: none;"></div>
+
+    <div class="container mx-auto px-6 relative z-[5]">
+        <div class="flex flex-col items-center text-center">
+            <h1 class="text-5xl md:text-7xl font-bold text mb-1">
+                שלום, אני <span class="custom-color-secondary">דור</span>
+            </h1>
+            <p class="text-xl md:text-3xl text-[#D3E0EA] mb-8 font-light">תוכן בלי פוזות</p>
+            <div class="w-16 h-1 bg-[#D3E0EA] mb-6"></div>
+            <p class="text-lg md:text-xl text-white max-w-2xl mb-8">
+                יוצר תוכן ומנהל סושיאל שמאמין באותנטיות מעל הכל.
+            </p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="#portfolio" class="px-8 py-3 bg-white text-[#276678] rounded-full font-medium hover:bg-[#D3E0EA] shadow-md transition duration-300 transform hover:scale-105">
+                    הצג עבודות
+                </a>
+                <a href="#contact" class="px-8 py-3 border-2 border-white text-white rounded-full font-medium hover:bg-white hover:text-[#276678] shadow-md transition duration-300 transform hover:scale-105">
+                    צור קשר
+                </a>
             </div>
         </div>
-    </section>
+    </div>
+
+    <svg class="absolute bottom-0 left-0 right-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120">
+        <path fill="#F6F5F5" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120H0Z"></path>
+    </svg>
+</header>
+
+
+
+   <!-- About Section -->
+<section id="about" class="py-20 section-fade">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col md:flex-row items-center">
+      
+      <!-- צד שמאל: וידאו -->
+      <div class="md:w-1/2 mb-10 md:mb-0">
+        <div class="w-full max-w-md mx-auto rounded-xl overflow-hidden shadow-lg">
+          <div class="relative w-full overflow-hidden bg-[#D3E0EA]" style="padding-top:177.78%;">
+            <iframe 
+              src="https://www.youtube.com/embed/_2k1RqACMlM?autoplay=1&mute=1&loop=1&playlist=_2k1RqACMlM&controls=0&modestbranding=1&rel=0"
+              class="absolute top-0 left-0 w-full h-full"
+              frameborder="0"
+              allow="autoplay; encrypted-media"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- צד ימין: טקסט -->
+      <div class="md:w-1/2 md:pr-10">
+        <h2 class="text-4xl font-bold mb-6 custom-color-primary">הסיפור שלי</h2>
+        <p class="text-lg text-gray-600 mb-6">
+          אני מאמין שתוכן אמיתי ואותנטי הוא המפתח ליצירת קשר משמעותי עם הקהל. בעולם מלא בתוכן מזויף ומשוכפל, אני מביא את הקול האמיתי והייחודי שלכם לקדמת הבמה.
+        </p>
+        <div class="flex flex-wrap gap-4">
+  <!-- כרטיס 1 -->
+  <div class="bg-[#D3E0EA] rounded-lg p-4 flex items-center gap-4">
+    <div class="w-12 h-12 rounded-full bg-[#1687A7] flex items-center justify-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+      </svg>
+    </div>
+    <h4 class="font-bold">ניהול סושיאל</h4>
+  </div>
+
+  <!-- כרטיס 2 -->
+  <div class="bg-[#D3E0EA] rounded-lg p-4 flex items-center gap-4">
+    <div class="w-12 h-12 rounded-full bg-[#1687A7] flex items-center justify-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+      </svg>
+    </div>
+    <h4 class="font-bold">יצירת תוכן</h4>
+  </div>
+
+  <!-- כרטיס 3 -->
+  <div class="bg-[#D3E0EA] rounded-lg p-4 flex items-center gap-4">
+    <div class="w-12 h-12 rounded-full bg-[#1687A7] flex items-center justify-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+      </svg>
+    </div>
+    <h4 class="font-bold">מיתוג</h4>
+  </div>
+</div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
     <!-- Infographics Section -->
     <section class="py-20 bg-[#D3E0EA] section-fade">
@@ -186,139 +209,140 @@
             <h2 class="text-3xl font-bold text-center mb-4 custom-color-primary">פורטפוליו</h2>
             <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto">עבודות נבחרות שמדגימות את הגישה האותנטית והיצירתית שלי לתוכן ומיתוג.</p>
           
-          <h2 class="text-2xl font-bold text-right mb-4 custom-color-primary">נוי- מדריכת יוגה</h2>
-            
-            <!-- Portfolio Slider 1 -->
-            <div class="mb-16">
-                <div class="relative">
-                    <div class="slider flex overflow-x-auto pb-8 hide-scrollbar">
-                        <!-- Slider Item 1 -->
-                        <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
-                            <div class="bg-[#D3E0EA] rounded-xl overflow-hidden shadow-lg">
-                                <div class="aspect-w-16 aspect-h-9 h-64 flex items-center justify-center">
-                                    <div class="text-center p-6">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-[#1687A7]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-                                        </svg>
-                                      <iframe src="https://drive.google.com/file/d/1t-XRn_ERRaY7wJOuJU52RgDqvuFVnb71/preview" width="640" height="480" allow="autoplay"></iframe>
-                                        <h3 class="text-xl font-bold mt-4 custom-color-primary">פרויקט 1</h3>
-                                        <p class="text-gray-600 mt-2">הוסף כאן את התיאור של הפרויקט</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Slider Item 2 -->
-                        <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
-                            <div class="bg-[#D3E0EA] rounded-xl overflow-hidden shadow-lg">
-                                <div class="aspect-w-16 aspect-h-9 h-64 flex items-center justify-center">
-                                    <div class="text-center p-6">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-[#1687A7]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                                        </svg>
-                                      
-                                      <iframe src="https://drive.google.com/file/d/1OzAhdDH-bInIHjphHTIAeVnnc-XgMhZz/preview" width="640" height="480" allow="autoplay"></iframe>
-                                      
-                                        <h3 class="text-xl font-bold mt-4 custom-color-primary">פרויקט 2</h3>
-                                        <p class="text-gray-600 mt-2">הוסף כאן את התיאור של הפרויקט</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Slider Controls -->
-                    <div class="flex justify-center mt-4">
-                        <button class="w-3 h-3 rounded-full bg-[#D3E0EA] mx-1 focus:outline-none slider-dot active" data-index="0"></button>
-                        <button class="w-3 h-3 rounded-full bg-[#D3E0EA] mx-1 focus:outline-none slider-dot" data-index="1"></button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Portfolio Slider 2 -->
-            <div>
-                <div class="relative">
-                    <div class="slider flex overflow-x-auto pb-8 hide-scrollbar">
-                        <!-- Slider Item 1 -->
-                        <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
-                            <div class="bg-[#D3E0EA] rounded-xl overflow-hidden shadow-lg">
-                                <div class="aspect-w-16 aspect-h-9 h-64 flex items-center justify-center">
-                                    <div class="text-center p-6">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-[#1687A7]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-                                        </svg>
-                                      <iframe src="https://drive.google.com/file/d/15V36nYDtSgrlygakS_Xp8SvwHBtbhVHG/preview" width="640" height="480" allow="autoplay"></iframe>
-                                        <h3 class="text-xl font-bold mt-4 custom-color-primary">פרויקט 3</h3>
-                                        <p class="text-gray-600 mt-2">הוסף כאן את התיאור של הפרויקט</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Slider Item 2 -->
-                        <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
-                            <div class="bg-[#D3E0EA] rounded-xl overflow-hidden shadow-lg">
-                                <div class="aspect-w-16 aspect-h-9 h-64 flex items-center justify-center">
-                                    <div class="text-center p-6">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-[#1687A7]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
-                                        </svg>
-                                      <iframe src="https://drive.google.com/file/d/1TbMh4d5ojS-1Dx7nh2NKdnDfetigiJJw/preview" width="640" height="480" allow="autoplay"></iframe>
-                                        <h3 class="text-xl font-bold mt-4 custom-color-primary">פרויקט 4</h3>
-                                        <p class="text-gray-600 mt-2">הוסף כאן את התיאור של הפרויקט</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Slider Controls -->
-                    <div class="flex justify-center mt-4">
-                        <button class="w-3 h-3 rounded-full bg-[#D3E0EA] mx-1 focus:outline-none slider-dot active" data-index="0"></button>
-                        <button class="w-3 h-3 rounded-full bg-[#D3E0EA] mx-1 focus:outline-none slider-dot" data-index="1"></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+          
+        <style>
+  .story-video {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
 
-    <!-- Testimonials Section -->
-    <section class="py-20 bg-[#276678] text-white section-fade">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16">מה אומרים עליי?</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
-                <div class="bg-white bg-opacity-10 p-8 rounded-lg backdrop-filter backdrop-blur-sm">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#D3E0EA] mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-                    </svg>
-                    <p class="mb-6 text-[#D3E0EA]">"דור הצליח לתפוס את המהות של העבודה שלי ולהעביר אותה בצורה אותנטית ומדויקת. התוצאות היו מעבר לציפיות שלי!"</p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 rounded-full bg-[#D3E0EA] flex items-center justify-center mr-4">
-                            <span class="text-[#276678] font-bold">עז</span>
-                        </div>
-                        <div>
-                            <h4 class="font-bold mr-2">עמית זמל</h4>
-                            <p class="text-[#D3E0EA] text-sm mr-2">מאלפת כלבים</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-white bg-opacity-10 p-8 rounded-lg backdrop-filter backdrop-blur-sm">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#D3E0EA] mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-                    </svg>
-                    <p class="mb-6 text-[#D3E0EA]">"העבודה עם דור שינתה לחלוטין את הנוכחות הדיגיטלית שלי. הוא הביא רעיונות חדשניים ויצירתיים שהתחברו בצורה מושלמת לקהל היעד."</p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 rounded-full bg-[#D3E0EA] flex items-center justify-center mr-4">
-                            <span class="text-[#276678] font-bold">נו</span>
-                        </div>
-                        <div>
-                            <h4  class="font-bold mr-2">נוי ואקנין</h4>
-                            <p class="text-[#D3E0EA] mr-2 text-sm">מדריכת יוגה</p>
-                        </div>
-                    </div>
-                </div>
+  /* מובייל - יחס סטורי */
+  @media (max-width: 1023px) {
+    .story-video {
+      padding-top: 177.78%; /* יחס 9:16 */
+    }
+  }
+
+  /* דסקטופ - גובה קבוע */
+  @media (min-width: 1024px) {
+    .story-video {
+      height: 600px; /* מגבלה בגובה */
+    }
+  }
+
+  .story-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
+<h2 class="text-2xl font-bold text-right mb-4 custom-color-primary">נוי- מדריכת יוגה</h2>
+
+<div class="mb-16">
+  <div class="relative">
+    <div class="slider flex overflow-x-auto pb-8 hide-scrollbar">
+
+      <!-- Slider Item 1 -->
+      <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
+        <div class="bg-[#D3E0EA] rounded-xl overflow-hidden shadow-lg">
+          <div class="story-video">
+            <iframe 
+              src="https://www.youtube.com/embed/6MRHrrB7D40?autoplay=1&mute=1&loop=1&playlist=6MRHrrB7D40&controls=0&modestbranding=1&rel=0"
+              frameborder="0"
+              allow="autoplay; encrypted-media"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mt-4 custom-color-primary">לוגו ושפה עיצובית</h3>
+            <p class="text-gray-600 mt-2">מתאים את הויזואליות של המותג לערכים ולהעדפות שלכם</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slider Item 2 -->
+      <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
+        <div class="bg-[#D3E0EA] rounded-xl overflow-hidden shadow-lg">
+          <div class="story-video">
+            <iframe 
+              src="https://www.youtube.com/embed/F3EcUHlPTVg?autoplay=1&mute=1&loop=1&playlist=F3EcUHlPTVg&controls=0&modestbranding=1&rel=0"
+              frameborder="0"
+              allow="autoplay; encrypted-media"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mt-4 custom-color-primary">סרטון תדמית ואטמוספירה</h3>
+            <p class="text-gray-600 mt-2">מעביר ללקוחות שלכם את האווירה שלכם דרך המסך</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="flex justify-center mt-4">
+      <button class="w-3 h-3 rounded-full bg-[#D3E0EA] mx-1 focus:outline-none slider-dot active" data-index="0"></button>
+      <button class="w-3 h-3 rounded-full bg-[#D3E0EA] mx-1 focus:outline-none slider-dot" data-index="1"></button>
+    </div>
+  </div>
+</div>
+
+<h2 class="text-2xl font-bold text-right mb-4 custom-color-primary">עמית לכלב- מאלפת כלבים</h2>
+
+<div>
+  <div class="relative">
+    <div class="slider flex overflow-x-auto pb-8 hide-scrollbar">
+
+      <!-- Slider Item 1 -->
+      <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
+        <div class="bg-[#D3E0EA] rounded-xl overflow-hidden shadow-lg">
+          <div class="story-video">
+            <iframe 
+              src="https://www.youtube.com/embed/f3ehCfZZE_I?autoplay=1&mute=1&loop=1&playlist=f3ehCfZZE_I&controls=0&modestbranding=1&rel=0"
+              frameborder="0"
+              allow="autoplay; encrypted-media"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mt-4 custom-color-primary">לוגו ושפה עיצובית</h3>
+            <p class="text-gray-600 mt-2">מתאים את הויזואליות של המותג לערכים ולהעדפות שלכם</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slider Item 2 -->
+      <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
+        <div class="bg-[#D3E0EA] rounded-xl overflow-hidden shadow-lg">
+          <div class="story-video">
+            <iframe 
+              src="https://www.youtube.com/embed/gbGuvoZYihk?autoplay=1&mute=1&loop=1&playlist=gbGuvoZYihk&controls=0&modestbranding=1&rel=0"
+              frameborder="0"
+              allow="autoplay; encrypted-media"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mt-4 custom-color-primary">שפת מותג לפרופיל אינסטגרם</h3>
+            <p class="text-gray-600 mt-2">הופך את הפרופיל שלכם לאטרקטיבי ומושך</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="flex justify-center mt-4">
+      <button class="w-3 h-3 rounded-full bg-[#D3E0EA] mx-1 focus:outline-none slider-dot active" data-index="0"></button>
+      <button class="w-3 h-3 rounded-full bg-[#D3E0EA] mx-1 focus:outline-none slider-dot" data-index="1"></button>
+    </div>
+  </div>
+</div>
+
+
             </div>
         </div>
     </section>
@@ -329,8 +353,8 @@
             <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-xl overflow-hidden">
                 <div class="md:flex">
                     <div class="md:w-1/2 gradient-bg p-10 text-white">
-                        <h2 class="text-3xl font-bold mb-6">בואו נדבר</h2>
-                        <p class="mb-8">מעוניינים לשמוע עוד על איך אני יכול לעזור לכם ליצור תוכן אותנטי שמדבר אל הקהל שלכם? השאירו פרטים ואחזור אליכם בהקדם.</p>
+                        <h2 class="text-3xl font-bold mb-6">בואו נדבר!</h2>
+                        <p class="mb-8">מעוניינים לשמוע עוד על איך אני יכול לעזור לכם ליצור תוכן אותנטי שמדבר אל הקהל שלכם? לא יודעים מאיפה להתחיל לגשת לרשתות החברתיות כדי לפרסם את העסק שלכם? השאירו פרטים ואחזור אליכם בהקדם.</p>
                         <div class="flex items-center mb-6">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-8 mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -363,12 +387,20 @@
                      class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1687A7]">
             </div>
             <div>
-              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">אימייל</label>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">מייל</label>
               <input type="email" id="email" name="reply_to" required
                      class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1687A7]">
             </div>
+            
+              <div>
+    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">טלפון</label>
+    <input type="tel" id="phone" name="phone" 
+           pattern="[0-9]{9,10}" 
+           class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1687A7]">
+  </div>
+            
             <div>
-              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">הודעה</label>
+              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">איך אוכל לעזור?</label>
               <textarea id="message" name="message" rows="4" required
                         class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1687A7]"></textarea>
             </div>
@@ -386,14 +418,7 @@
   </div>
 </section>
 
-    <!-- Footer -->
-    <footer class="py-10 bg-[#276678] text-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-2xl font-bold">דור</h2> <h2 class="text mb-3">תוכן בלי פוזות</h2>
-            <div class="w-16 h-1 bg-[#1687A7] mx-auto mb-3"></div>
-            <p class="text-[#D3E0EA] text-sm">&copy; 2025 כל הזכויות שמורות</p>
-        </div>
-    </footer>
+    
 
     <script>
         // Intersection Observer for fade-in animations
@@ -490,18 +515,16 @@
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
 <script>
   (function(){
-    // מחבר את האתר שלך ל־EmailJS
     emailjs.init("ZztxRN5yl88fnuQrK"); 
   })();
 
-  // האזנה ללחיצה על כפתור "שלח"
   document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // לא לטעון מחדש את העמוד
+    e.preventDefault();
 
     emailjs.sendForm("service_xuvmaf3", "template_u8casnr", "#contactForm")
       .then(() => {
         alert("✅ ההודעה נשלחה בהצלחה!");
-        this.reset(); // לרוקן את השדות אחרי שליחה
+        this.reset();
       }, (error) => {
         console.error("❌ שגיאה:", error);
         alert("שגיאה בשליחת ההודעה, נסה שוב.");
@@ -509,5 +532,74 @@
   });
 </script>
 
+
+  <!-- Back To Top Button -->
+  <div id="backToTop" title="חזרה למעלה">&#8679;</div>
+
+  <!-- Footer -->
+  <footer class="py-10 bg-[#276678] text-white">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-2xl font-bold">דור</h2> 
+      <h2 class="mb-3">תוכן בלי פוזות</h2>
+      <div class="w-16 h-1 bg-[#1687A7] mx-auto mb-3"></div>
+      <p class="text-[#D3E0EA] text-sm">&copy; 2025 כל הזכויות שמורות</p>
+    </div>
+  </footer>
+
+  <!-- EmailJS script -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("ZztxRN5yl88fnuQrK"); 
+    })();
+
+    document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      emailjs.sendForm("service_xuvmaf3", "template_u8casnr", "#contactForm")
+        .then(() => {
+          alert("✅ ההודעה נשלחה בהצלחה!");
+          this.reset();
+        }, (error) => {
+          console.error("❌ שגיאה:", error);
+          alert("שגיאה בשליחת ההודעה, נסה שוב.");
+        });
+    });
+  </script>
+
+    <!-- GSAP Animations -->
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero Intro Animation
+        gsap.from("#hero h1, #hero p, #hero a", {
+            
+            y: 5,
+            duration: 3,
+            stagger: 0.2,
+            ease: "power2.out"
+        });
+
+        // Hero Parallax + Zoom
+        gsap.to(".bg-parallax", {
+            yPercent: 50,
+            scale: 1.2,
+            ease: "none",
+            scrollTrigger: {
+                trigger: "#hero",
+                start: "top top",
+                end: "bottom top",
+                scrub: true
+            }
+        });
+
+        // Breathing effect
+        gsap.to(".bg-parallax", {
+            y: "+=30",
+            duration: 5,
+            yoyo: true,
+            repeat: -1,
+            ease: "sine.inOut"
+        });
+    </script>
 </body>
 </html>
