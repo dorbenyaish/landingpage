@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
+  
 <head>
+  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>דור | תוכן בלי פוזות</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap">
     <style>
+      
         body {
             font-family: 'Heebo', sans-serif;
             scroll-behavior: smooth;
@@ -66,6 +70,13 @@
         .slider-item {
             scroll-snap-align: start;
         }
+      
+      .hero-blur {
+  filter: blur(20px);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
       iframe {
   max-width: 100%;
   height: auto;
@@ -126,7 +137,7 @@
   <div class="container mx-auto px-6 text-center">
     
     <!-- וידאו במרכז -->
-    <div class="w-full max-w-lg mx-auto rounded-xl overflow-hidden shadow-lg mb-10 flex justify-center">
+    <div class="w-full max-w-lg mx-auto rounded-xl overflow-hidden mb-10 flex justify-center">
       <div class="story-video">
   <iframe 
     src="https://www.youtube.com/embed/_2k1RqACMlM?autoplay=1&mute=1&loop=1&playlist=_2k1RqACMlM&controls=0&modestbranding=1&rel=0"
@@ -368,6 +379,45 @@
             </div>
         </div>
     </section>
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-[#276678] text-white section-fade">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">מה אומרים עליי?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                <div class="bg-white bg-opacity-10 p-8 rounded-lg backdrop-filter backdrop-blur-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#D3E0EA] mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                    </svg>
+                    <p class="mb-6 text-[#D3E0EA]">"דור הצליח לתפוס את המהות של המקצוע שלי ולהעביר אותה בצורה אותנטית ומדויקת. התוצאות היו מעבר לציפיות שלי!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-[#D3E0EA] flex items-center justify-center mr-4">
+                            <span class="text-[#276678] font-bold">עז</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mr-2">עמית זמל</h4>
+                            <p class="text-[#D3E0EA] text-sm mr-2">מאלפת כלבים</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 p-8 rounded-lg backdrop-filter backdrop-blur-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#D3E0EA] mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                    </svg>
+                    <p class="mb-6 text-[#D3E0EA]">"העבודה עם דור שינתה לחלוטין את הנוכחות הדיגיטלית שלי. הוא הביא רעיונות חדשניים ויצירתיים שהתחברו בצורה מושלמת לקהל שלי."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-[#D3E0EA] flex items-center justify-center mr-4">
+                            <span class="text-[#276678] font-bold">נ</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mr-2">נוי ואקנין</h4>
+                            <p class="text-[#D3E0EA] text-sm mr-2">מדריכת יוגה</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 section-fade">
@@ -581,7 +631,91 @@ gsap.registerPlugin(ScrollTrigger);
             repeat: -1,
             ease: "sine.inOut"
         });
-    </script>
 
+gsap.from("header", {
+  opacity: 0,
+  scale: 1.1,
+  y: -50,
+  duration: 1.5,
+  ease: "power4.out"
+});
+
+gsap.from("header *", {
+  opacity: 0,
+  y: 30,
+  duration: 1,
+  stagger: 0.15,
+  delay: 0.5,
+  ease: "power3.out"
+});
+  
+  document.addEventListener("DOMContentLoaded", function () {
+  // אפקט כניסה להירו
+  gsap.from("header", {
+    opacity: 0,
+    scale: 1.05,
+    y: -50,
+    duration: 1.5,
+    ease: "power4.out"
+  });
+
+  // אפקט לכל האלמנטים שבתוך ההירו
+  gsap.from("header *", {
+    opacity: 0,
+    y: 30,
+    duration: 1,
+    stagger: 0.15,
+    delay: 0.3,
+    ease: "power3.out"
+  });
+});
+</script>
+<script>
+window.onload = function () {
+  // אפקט Fade+Slide ל-Hero
+  gsap.from("header", {
+    opacity: 0,
+    y: -100,
+    duration: 1.2,
+    ease: "power4.out"
+  });
+
+  // אפקט לכל הילדים של ה-Hero (כותרת, טקסט, כפתורים)
+  gsap.from("header .flex > *", {
+    opacity: 0,
+    y: 30,
+    duration: 0.8,
+    stagger: 0.2,
+    delay: 0.5,
+    ease: "power2.out"
+  });
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script>
+window.onload = function () {
+  // אפקט ל-Hero עצמו
+  gsap.fromTo(
+    "header",
+    { opacity: 0, y: -100 },
+    { opacity: 1, y: 0, duration: 1.2, ease: "power4.out" }
+  );
+
+  // אפקט לכותרת ותיאור בלבד
+  gsap.fromTo(
+    "header h1, header p",
+    { opacity: 0, y: 30 },
+    { opacity: 1, y: 0, duration: 0.8, stagger: 0.2, delay: 0.5, ease: "power2.out" }
+  );
+
+  // אפקט לכפתורים בנפרד (כדי שלא ייעלמו)
+  gsap.fromTo(
+    "header a",
+    { opacity: 0, scale: 0.9 },
+    { opacity: 1, scale: 1, duration: 0.6, delay: 1, ease: "back.out(1.7)" }
+  );
+};
+</script>
 </body>
 </html>
