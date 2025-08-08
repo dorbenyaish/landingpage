@@ -152,7 +152,9 @@ document.addEventListener("DOMContentLoaded", function () {
   margin: 0 auto; /* מרכז את האייטם בתוך הסליידר */
 }
       
-      
+      html {
+  scroll-behavior: smooth;
+}
     </style>
 </head>
 <body class="custom-bg-white text-gray-800">
@@ -536,8 +538,8 @@ document.addEventListener("DOMContentLoaded", function () {
                             <span class="text-[#276678] font-bold">עז</span>
                         </div>
                         <div>
-                            <h4 class="font-bold text-2xl mr-6">עמית זמל</h4>
-                            <h4 class="text-[#D3E0EA] text-xl mr-6">מאלפת כלבים</h4>
+                            <h4 class="font-bold text-2xl mr-4">עמית זמל</h4>
+                            <h4 class="text-[#D3E0EA] text-xl mr-4">מאלפת כלבים</h4>
                         </div>
                     </div>
                 </div>
@@ -552,8 +554,8 @@ document.addEventListener("DOMContentLoaded", function () {
                             <span class="text-[#276678] font-bold">נ</span>
                         </div>
                         <div>
-                            <h4 class="font-bold text-2xl mr-6">נוי ואקנין</h4>
-                            <h4 class="text-[#D3E0EA] text-xl mr-6">מדריכת יוגה</h4>
+                            <h4 class="font-bold text-2xl mr-4">נוי ואקנין</h4>
+                            <h4 class="text-[#D3E0EA] text-xl mr-4">מדריכת יוגה</h4>
                         </div>
                     </div>
                 </div>
@@ -873,7 +875,12 @@ window.onload = function () {
 </script>
 
 <!-- חץ חזור למעלה -->
-<button id="backToTop" title="חזור לראש הדף">⬆</button>
+<button id="backToTop" title="חזור לראש הדף" aria-label="חזור לראש הדף">
+  <!-- אייקון חץ שטוח ולבן -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+  </svg>
+</button>
 
 <style>
 #backToTop {
@@ -882,16 +889,23 @@ window.onload = function () {
   left: 30px;
   z-index: 1000;
   background-color: #1687A7;
-  color: white;
   border: none;
-  padding: 12px 16px;
+  padding: 12px;
   border-radius: 9999px;
-  font-size: 20px;
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   opacity: 0;
   transition: opacity 0.3s ease, transform 0.3s ease;
   pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#backToTop svg {
+  width: 24px;
+  height: 24px;
+  stroke: white;
 }
 
 #backToTop.show {
@@ -927,5 +941,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
+
 </body>
 </html>
