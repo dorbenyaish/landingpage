@@ -211,7 +211,7 @@ document.addEventListener("DOMContentLoaded", function () {
       יש לי עין חדה לצילום ולעיצוב, חוש מדויק לכתיבה ועריכה, ויכולת להפוך רעיון מפוזר לתוכן פרקטי ומדויק שמדבר לקהל שלך בגובה העיניים וישר ללב. אז אם אתם מרגישים שזה הזמן שהמותג שלכם ידבר סוף סוף בקול שלכם- דברו איתי.
     </p>
 
-        <h2 class="text-4xl font-bold mb-6 custom-color-primary">אני מציע:</h2>
+        <h2 class="text-5xl font-bold mb-5 custom-color-primary">מה אני מציע?</h2>
 
     <!-- כרטיסים -->
     <div class="flex flex-col md:flex-row justify-center gap-4 mt-8">
@@ -294,279 +294,242 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20 section-fade">
-        <div class="container mx-auto px-6">
-            <h2 class="text-7xl font-bold text-center mb-4 custom-color-primary">פורטפוליו</h2>
-            <p class="text-xl text-center text-gray-600 mb-10 max-w-2xl mx-auto">עבודות נבחרות שמדגימות את הגישה האותנטית והיצירתית שלי לתוכן ומיתוג.</p>
-          
-          
-        <style>
-  .story-video {
-    position: relative;
-    max-width: 300px; 
-    width: 100%;
-    overflow: hidden;
-  }
+   <!-- Portfolio Section (fixed sliders) -->
+<section id="portfolio" class="py-20 section-fade" dir="rtl">
+  <div class="container mx-auto px-6">
+    <h2 class="text-7xl font-bold text-center mb-4 custom-color-primary">פורטפוליו</h2>
+    <p class="text-xl text-center text-gray-600 mb-10 max-w-2xl mx-auto">עבודות נבחרות שמדגימות את הגישה האותנטית והיצירתית שלי לתוכן ומיתוג.</p>
 
-  
-    .story-video {
-      padding-top: 177.78%; /* יחס 9:16 */
-      
-    }
-  }
+    <style>
+      /* וידאו אנכי ביחס 9:16 */
+      .story-video { position: relative; max-width: 300px; width: 100%; overflow: hidden; }
+      .story-video { padding-top: 177.78%; }
+      @media (min-width: 1024px) { .story-video { height: 450px; } }
+      .story-video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-  /* דסקטופ - גובה קבוע */
-  @media (min-width: 1024px) {
-    .story-video {
-      height: 450px; /* מגבלה בגובה */
-    }
-  }
+      /* הסתרת סקרול אופקי יפה */
+      .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      .hide-scrollbar::-webkit-scrollbar { display: none; }
 
-  .story-video iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-</style>
-<h3 class="text-2xl font-bold text-right mb-4 custom-color-primary">דור- קמפיין השקה</h3>
+      /* נקודה פעילה */
+      .slider-dot { width: 12px; height: 12px; border-radius: 9999px; background: #D3E0EA; margin: 0 4px; }
+      .slider-dot.active { background: #1687A7; }
+    </style>
 
-<div class="mb-16">
-  <div class="relative">
-    <div class="slider flex overflow-x-auto pb-8 hide-scrollbar">
-
-      <!-- Slider Item 1 -->
-      <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
-        <div class="bg-[#eeeeee] rounded-xl overflow-hidden">
-          <div class="story-video">
-            <iframe 
-              src="https://www.youtube.com/embed/KpipnkMLiCQ?autoplay=1&loop=1&playlist=KpipnkMLiCQ&controls=0&modestbranding=1&rel=0&enablejsapi=1"
-              frameborder="0"
-              allow="autoplay; encrypted-media"
-              allowfullscreen>
-            </iframe>
-          </div>
-          <div class="p-6">
-            <h1 class="text-xl font-bold mt-4 custom-color-primary">לוגו ושפה עיצובית</h1>
-            <p class="text-gray-600 mt-2">מייצג את ערכי המותג שלכם על ידי גרפיקה וויזואליות תואמת אופי</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slider Item 2 -->
-      <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
-        <div class="bg-[#eeeeee] rounded-xl overflow-hidden">
-          <div class="story-video">
-            <iframe 
-              src="https://www.youtube.com/embed/yLU-QV4S9oQ?autoplay=1&loop=1&playlist=yLU-QV4S9oQ&controls=0&modestbranding=1&rel=0&enablejsapi=1"
-              frameborder="0"
-              allow="autoplay; encrypted-media"
-              allowfullscreen>
-            </iframe>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mt-4 custom-color-primary">קריאייטיב טרנדי </h3>
-            <p class="text-gray-600 mt-2">מייצר תוכן שתואם את המגמות הטרנדיות והויראליות ברשתות</p>
-          </div>
-        </div>
-      </div>
-<!-- Slider Item 3 -->
-      <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
-        <div class="bg-[#eeeeee] rounded-xl overflow-hidden">
-          <div class="story-video">
-            <iframe 
-              src="https://www.youtube.com/embed/2V6IOmkG96A?autoplay=1&loop=1&playlist=2V6IOmkG96A&controls=0&modestbranding=1&rel=0&enablejsapi=1"
-              frameborder="0"
-              allow="autoplay; encrypted-media"
-              allowfullscreen>
-            </iframe>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mt-4 custom-color-primary">תוכן סטורי יומיומי</h3>
-            <p class="text-gray-600 mt-2">מניע את הלקוחות שלכם לפעולה בדרך יצירתית</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    </div>
-    <div class="flex justify-center mt-4">
-      <button class="w-3 h-3 rounded-full bg-[#D3E0EA] mx-1 focus:outline-none slider-dot active" data-index="0"></button>
-      <button class="w-3 h-3 rounded-full bg-[#D3E0EA] mx-1 focus:outline-none slider-dot" data-index="1"></button>
-<button class="w-3 h-3 rounded-full bg-[#D3E0EA] mx-1 focus:outline-none slider-dot" data-index="2"></button>
-    </div>
-  </div>
-</div>
-      
-<h3 class="container mx-auto px-6 text-2xl font-bold text-right mb-4 custom-color-primary">נוי- מדריכת יוגה</h3>
-
-<div class="mb-16">
-  <div class="relative">
-    <div class="slider flex overflow-x-auto pb-8 hide-scrollbar">
-
-      <!-- Slider Item 1 -->
-      <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
-        <div class="bg-[#002a3e] rounded-xl overflow-hidden">
-          <div class="story-video">
-            <iframe 
-              src="https://www.youtube.com/embed/6MRHrrB7D40?autoplay=1&loop=1&playlist=6MRHrrB7D40&controls=0&modestbranding=1&rel=0&enablejsapi=1"
-              frameborder="0"
-              allow="autoplay; encrypted-media"
-              allowfullscreen>
-            </iframe>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mt-4 custom-color-secondary">לוגו ושפה עיצובית</h3>
-            <p class="custom-color-secondary mt-2">מתאים את הויזואליות של המותג לערכים ולהעדפות שלכם</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slider Item 2 -->
-      <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
-        <div class="bg-[#002a3e] rounded-xl overflow-hidden">
-          <div class="story-video">
-            <iframe 
-              src="https://www.youtube.com/embed/F3EcUHlPTVg?autoplay=1&loop=1&playlist=F3EcUHlPTVg&controls=0&modestbranding=1&rel=0&enablejsapi=1"
-              frameborder="0"
-              allow="autoplay; encrypted-media"
-              allowfullscreen>
-            </iframe>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mt-4 custom-color-secondary">סרטון תדמית </h3>
-            <p class="custom-color-secondary mt-2">מעביר ללקוחות שלכם את האווירה שלכם דרך המסך</p>
-          </div>
-        </div>
-      </div>
-<!-- Slider Item 3 -->
-      <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
-        <div class="bg-[#002a3e] rounded-xl overflow-hidden">
-          <div class="story-video">
-            <iframe 
-        src="https://www.youtube.com/embed/I6gs44lBGHA?autoplay=1&loop=1&playlist=I6gs44lBGHA&controls=0&modestbranding=1&rel=0&enablejsapi=1"
-              frameborder="0"
-              allow="autoplay; encrypted-media"
-              allowfullscreen>
-            </iframe>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mt-4 custom-color-secondary">תוכן וידאו</h3>
-            <p class="custom-color-secondary mt-2">מספר ללקוחות שלכם מי אתם בדרך יצירתית ושקופה</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    </div>
-    <div class="flex justify-center mt-4">
-      <button class="w-3 h-3 rounded-full bg-[#D3E0EA] mx-1 focus:outline-none slider-dot active" data-index="0"></button>
-      <button class="w-3 h-3 rounded-full bg-[#D3E0EA] mx-1 focus:outline-none slider-dot" data-index="1"></button>
-<button class="w-3 h-3 rounded-full bg-[#D3E0EA] mx-1 focus:outline-none slider-dot" data-index="2"></button>
-    </div>
-  </div>
-</div>
-
-<h3 class="container mx-auto px-6 text-2xl font-bold text-right mb-4 custom-color-primary">עמית לכלב- מאלפת כלבים</h3>
-
-<div>
-  <div class="relative">
-    <div class="slider flex overflow-x-auto pb-8 hide-scrollbar">
-
-      <!-- Slider Item 1 -->
-      <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
-        <div class="bg-[#eeeeee] rounded-xl overflow-hidden">
-          <div class="story-video">
-            <iframe 
-              src="https://www.youtube.com/embed/f3ehCfZZE_I?autoplay=1&loop=1&playlist=f3ehCfZZE_I&controls=0&modestbranding=1&rel=0&enablejsapi=1"
-              frameborder="0"
-              allow="autoplay; encrypted-media"
-              allowfullscreen>
-            </iframe>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mt-4 custom-color-primary">שפת מותג ויזואלית</h3>
-            <p class="text-gray-600 mt-2">מייצר לעסק שלכם שפה גרפית שתואמת את הערכים שלכם</p>
-          </div>
-        </div>
-      </div>
-      
-       <!-- Slider Item 2 -->
-      <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
-        <div class="bg-[#eeeeee] rounded-xl overflow-hidden">
-          <div class="story-video">
-            <iframe 
-              src="https://www.youtube.com/embed/8IgkY1lxSUk?autoplay=1&loop=1&playlist=8IgkY1lxSUk&controls=0&modestbranding=1&rel=0&enablejsapi=1"
-              frameborder="0"
-              allow="autoplay; encrypted-media"
-              allowfullscreen>
-            </iframe>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mt-4 custom-color-primary">סרטון תדמית</h3>
-            <p class="text-gray-600 mt-2">מייצר נוכחות דיגיטלית והיכרות לקהל ברשתות</p>
-          </div>
-        </div>
-      </div>
-      
-            <!-- Slider Item 3 -->
-      <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
-        <div class="bg-[#eeeeee] rounded-xl overflow-hidden">
-          <div class="story-video">
-            <iframe 
-              src="https://www.youtube.com/embed/k-4AWZg1xAk?autoplay=1&loop=1&playlist=k-4AWZg1xAk&controls=0&modestbranding=1&rel=0&enablejsapi=1"
-              frameborder="0"
-              allow="autoplay; encrypted-media"
-              allowfullscreen>
-            </iframe>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mt-4 custom-color-primary">תוכן וידאו</h3>
-            <p class="text-gray-600 mt-2">מייצר תכנים שיגרמו לקהל שלכם להכיר אתכם ולחשיפה ברשתות</p>
-          </div>
-        </div>
-      </div>
-
-            <button class="w-3 h-3 rounded-full bg-[#D3E0EA] mx-1 focus:outline-none slider-dot" data-index="1"></button>
-
-      
-      <!-- Slider Item 4 -->
-      <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
-        <div class="bg-[#eeeeee] rounded-xl overflow-hidden">
-          <div class="story-video">
-            <iframe 
-              src="https://www.youtube.com/embed/gbGuvoZYihk?autoplay=1&loop=1&playlist=gbGuvoZYihk&controls=0&modestbranding=1&rel=0&enablejsapi=1"
-              frameborder="0"
-              allow="autoplay; encrypted-media"
-              allowfullscreen>
-            </iframe>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mt-4 custom-color-primary">שפת מותג באינסטגרם</h3>
-            <p class="text-gray-600 mt-2">הופך את הפרופיל שלכם לאטרקטיבי ומושך</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="flex justify-center mt-4">
-      <button class="w-3 h-3 rounded-full bg-[#D3E0EA] mx-1 focus:outline-none slider-dot active" data-index="0"></button>
-      <button class="w-3 h-3 rounded-full bg-[#D3E0EA] mx-1 focus:outline-none slider-dot" data-index="1"></button>
-      <button class="w-3 h-3 rounded-full bg-[#D3E0EA] mx-1 focus:outline-none slider-dot" data-index="2"></button>
-      <button class="w-3 h-3 rounded-full bg-[#D3E0EA] mx-1 focus:outline-none slider-dot" data-index="3"></button>
-    </div>
-  </div>
-</div>
-
-
+    <!-- ===== סליידר 1: דור – קמפיין השקה ===== -->
+    <h3 class="text-2xl font-bold text-right mb-4 custom-color-primary">דור- קמפיין השקה</h3>
+    <div class="mb-16 slider-wrapper">
+      <div class="relative">
+        <div class="slider flex overflow-x-auto pb-8 hide-scrollbar">
+          <!-- Slide 1 -->
+          <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
+            <div class="bg-[#eeeeee] rounded-xl overflow-hidden">
+              <div class="story-video">
+                <iframe src="https://www.youtube.com/embed/KpipnkMLiCQ?autoplay=1&loop=1&playlist=KpipnkMLiCQ&controls=0&modestbranding=1&rel=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div>
+              <div class="p-6">
+                <h1 class="text-xl font-bold mt-4 custom-color-primary">לוגו ושפה עיצובית</h1>
+                <p class="text-gray-600 mt-2">מייצג את ערכי המותג שלכם על ידי גרפיקה וויזואליות תואמת אופי</p>
+              </div>
             </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
+            <div class="bg-[#eeeeee] rounded-xl overflow-hidden">
+              <div class="story-video">
+                <iframe src="https://www.youtube.com/embed/yLU-QV4S9oQ?autoplay=1&loop=1&playlist=yLU-QV4S9oQ&controls=0&modestbranding=1&rel=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mt-4 custom-color-primary">קריאייטיב טרנדי</h3>
+                <p class="text-gray-600 mt-2">מייצר תוכן שתואם את המגמות הטרנדיות והויראליות ברשתות</p>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
+            <div class="bg-[#eeeeee] rounded-xl overflow-hidden">
+              <div class="story-video">
+                <iframe src="https://www.youtube.com/embed/2V6IOmkG96A?autoplay=1&loop=1&playlist=2V6IOmkG96A&controls=0&modestbranding=1&rel=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mt-4 custom-color-primary">תוכן סטורי יומיומי</h3>
+                <p class="text-gray-600 mt-2">מניע את הלקוחות שלכם לפעולה בדרך יצירתית</p>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
+
+        <!-- נקודות -->
+        <div class="flex justify-center mt-4">
+          <button class="slider-dot active" data-index="0"></button>
+          <button class="slider-dot" data-index="1"></button>
+          <button class="slider-dot" data-index="2"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== סליידר 2: נוי – מדריכת יוגה ===== -->
+    <h3 class="container mx-auto px-6 text-2xl font-bold text-right mb-4 custom-color-primary">נוי- מדריכת יוגה</h3>
+    <div class="mb-16 slider-wrapper">
+      <div class="relative">
+        <div class="slider flex overflow-x-auto pb-8 hide-scrollbar">
+          <!-- Slide 1 -->
+          <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
+            <div class="bg-[#002a3e] rounded-xl overflow-hidden">
+              <div class="story-video">
+                <iframe src="https://www.youtube.com/embed/6MRHrrB7D40?autoplay=1&loop=1&playlist=6MRHrrB7D40&controls=0&modestbranding=1&rel=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mt-4 custom-color-secondary">לוגו ושפה עיצובית</h3>
+                <p class="custom-color-secondary mt-2">מתאים את הויזואליות של המותג לערכים ולהעדפות שלכם</p>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
+            <div class="bg-[#002a3e] rounded-xl overflow-hidden">
+              <div class="story-video">
+                <iframe src="https://www.youtube.com/embed/F3EcUHlPTVg?autoplay=1&loop=1&playlist=F3EcUHlPTVg&controls=0&modestbranding=1&rel=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mt-4 custom-color-secondary">סרטון תדמית</h3>
+                <p class="custom-color-secondary mt-2">מעביר ללקוחות שלכם את האווירה שלכם דרך המסך</p>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
+            <div class="bg-[#002a3e] rounded-xl overflow-hidden">
+              <div class="story-video">
+                <iframe src="https://www.youtube.com/embed/I6gs44lBGHA?autoplay=1&loop=1&playlist=I6gs44lBGHA&controls=0&modestbranding=1&rel=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mt-4 custom-color-secondary">תוכן וידאו</h3>
+                <p class="custom-color-secondary mt-2">מספר ללקוחות שלכם מי אתם בדרך יצירתית ושקופה</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- נקודות -->
+        <div class="flex justify-center mt-4">
+          <button class="slider-dot active" data-index="0"></button>
+          <button class="slider-dot" data-index="1"></button>
+          <button class="slider-dot" data-index="2"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== סליידר 3: עמית לכלב – מאלפת כלבים ===== -->
+    <h3 class="container mx-auto px-6 text-2xl font-bold text-right mb-4 custom-color-primary">עמית לכלב- מאלפת כלבים</h3>
+    <div class="slider-wrapper">
+      <div class="relative">
+        <div class="slider flex overflow-x-auto pb-8 hide-scrollbar">
+          <!-- Slide 1 -->
+          <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
+            <div class="bg-[#eeeeee] rounded-xl overflow-hidden">
+              <div class="story-video">
+                <iframe src="https://www.youtube.com/embed/f3ehCfZZE_I?autoplay=1&loop=1&playlist=f3ehCfZZE_I&controls=0&modestbranding=1&rel=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mt-4 custom-color-primary">שפת מותג ויזואלית</h3>
+                <p class="text-gray-600 mt-2">מייצר לעסק שלכם שפה גרפית שתואמת את הערכים שלכם</p>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
+            <div class="bg-[#eeeeee] rounded-xl overflow-hidden">
+              <div class="story-video">
+                <iframe src="https://www.youtube.com/embed/8IgkY1lxSUk?autoplay=1&loop=1&playlist=8IgkY1lxSUk&controls=0&modestbranding=1&rel=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mt-4 custom-color-primary">סרטון תדמית</h3>
+                <p class="text-gray-600 mt-2">מייצר נוכחות דיגיטלית והיכרות לקהל ברשתות</p>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
+            <div class="bg-[#eeeeee] rounded-xl overflow-hidden">
+              <div class="story-video">
+                <iframe src="https://www.youtube.com/embed/k-4AWZg1xAk?autoplay=1&loop=1&playlist=k-4AWZg1xAk&controls=0&modestbranding=1&rel=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mt-4 custom-color-primary">תוכן וידאו</h3>
+                <p class="text-gray-600 mt-2">מייצר תכנים שיגרמו לקהל שלכם להכיר אתכם ולחשיפה ברשתות</p>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 4 -->
+          <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
+            <div class="bg-[#eeeeee] rounded-xl overflow-hidden">
+              <div class="story-video">
+                <iframe src="https://www.youtube.com/embed/gbGuvoZYihk?autoplay=1&loop=1&playlist=gbGuvoZYihk&controls=0&modestbranding=1&rel=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mt-4 custom-color-primary">שפת מותג באינסטגרם</h3>
+                <p class="text-gray-600 mt-2">הופך את הפרופיל שלכם לאטרקטיבי ומושך</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- נקודות -->
+        <div class="flex justify-center mt-4">
+          <button class="slider-dot active" data-index="0"></button>
+          <button class="slider-dot" data-index="1"></button>
+          <button class="slider-dot" data-index="2"></button>
+          <button class="slider-dot" data-index="3"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS: חיבור כפתורים לכל סליידר בנפרד -->
+  <script>
+    (function () {
+      function setupSlider(wrapper) {
+        const slider = wrapper.querySelector('.slider');
+        const items  = wrapper.querySelectorAll('.slider-item');
+        const dots   = wrapper.querySelectorAll('.slider-dot');
+
+        // קפיצה לשקופית מתוך הנקודה
+        dots.forEach((dot) => {
+          dot.addEventListener('click', () => {
+            const idx = parseInt(dot.dataset.index, 10) || 0;
+            const target = items[idx];
+            if (!target) return;
+            slider.scrollTo({
+              left: target.offsetLeft - slider.offsetLeft,
+              behavior: 'smooth'
+            });
+          });
+        });
+
+        // עדכון נקודות בזמן גלילה
+        const updateActiveDot = () => {
+          let activeIndex = 0;
+          items.forEach((item, i) => {
+            const itemCenter = item.offsetLeft - slider.offsetLeft + item.offsetWidth / 2;
+            const sliderCenter = slider.scrollLeft + slider.offsetWidth / 2;
+            if (Math.abs(itemCenter - sliderCenter) < item.offsetWidth / 2) {
+              activeIndex = i;
+            }
+          });
+          dots.forEach((d, i) => d.classList.toggle('active', i === activeIndex));
+        };
+
+        slider.addEventListener('scroll', updateActiveDot, { passive: true });
+        // עדכון ראשוני
+        updateActiveDot();
+      }
+
+      document.querySelectorAll('#portfolio .slider-wrapper').forEach(setupSlider);
+    })();
+  </script>
+</section>
+
 
 <!-- Testimonials Slider (same pattern as Portfolio) -->
 <section id="testimonials" class="py-20 bg-[#002a3e] text-white section-fade" dir="rtl">
