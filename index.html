@@ -211,6 +211,8 @@ document.addEventListener("DOMContentLoaded", function () {
       יש לי עין חדה לצילום ולעיצוב, חוש מדויק לכתיבה ועריכה, ויכולת להפוך רעיון מפוזר לתוכן פרקטי ומדויק שמדבר לקהל שלך בגובה העיניים וישר ללב. אז אם אתם מרגישים שזה הזמן שהמותג שלכם ידבר סוף סוף בקול שלכם- דברו איתי.
     </p>
 
+        <h2 class="text-4xl font-bold mb-6 custom-color-primary">אני מציע:</h2>
+
     <!-- כרטיסים -->
     <div class="flex flex-col md:flex-row justify-center gap-4 mt-8">
       
@@ -566,65 +568,70 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
     </section>
 
-<!-- Testimonials Slider -->
-<section class="py-20 bg-[#002a3e] text-white section-fade" dir="rtl">
+<!-- Testimonials Slider (same pattern as Portfolio) -->
+<section id="testimonials" class="py-20 bg-[#002a3e] text-white section-fade" dir="rtl">
   <div class="container mx-auto px-6">
     <h1 class="text-5xl font-bold text-center mb-10">מה אומרים עליי?</h1>
 
-    <div class="relative max-w-4xl mx-auto overflow-hidden">
-      <!-- מסילה -->
-      <div id="testimonials-track" class="flex transition-transform duration-500 ease-out" style="width: 200%;">
-        
-        <!-- שקופית 1 -->
-        <div class="w-full flex-shrink-0 p-4" style="width: 50%;">
-          <div class="bg-white bg-opacity-10 p-8 rounded-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#D3E0EA] mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-            </svg>
-            <h2 class="mb-6 text-2xl text-[#D3E0EA]">"דור הצליח לתפוס את המהות של המקצוע שלי ולהעביר אותה בצורה אותנטית ומדויקת. התוצאות היו מעבר לציפיות שלי!"</h2>
-            <div class="flex items-center">
-              <div class="w-16 h-16 rounded-full bg-[#D3E0EA] flex items-center justify-center ml-4">
-                <span class="text-[#276678] font-bold">עז</span>
-              </div>
-              <div>
-                <h4 class="font-bold text-2xl">עמית זמל</h4>
-                <h4 class="text-[#D3E0EA] text-xl">מאלפת כלבים</h4>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- שקופית 2 -->
-        <div class="w-full flex-shrink-0 p-4" style="width: 50%;">
-          <div class="bg-white bg-opacity-10 p-8 rounded-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#D3E0EA] mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-            </svg>
-            <h2 class="mb-6 text-2xl text-[#D3E0EA]">"העבודה עם דור שינתה לחלוטין את הנוכחות הדיגיטלית שלי. הוא הביא רעיונות חדשניים ויצירתיים שהתחברו בצורה מושלמת לקהל שלי."</h2>
-            <div class="flex items-center">
-              <div class="w-16 h-16 rounded-full bg-[#D3E0EA] flex items-center justify-center ml-4">
-                <span class="text-[#276678] font-bold">נו</span>
-              </div>
-              <div>
-                <h4 class="font-bold text-2xl">נוי ואקנין</h4>
-                <h4 class="text-[#D3E0EA] text-xl">מדריכת יוגה</h4>
+    <div class="mb-16">
+      <div class="relative">
+        <!-- המסילה זהה לזו של הפורטפוליו -->
+        <div class="slider flex overflow-x-auto pb-8 hide-scrollbar">
+          <!-- Slide 1 -->
+          <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
+            <div class="bg-white bg-opacity-10 p-8 rounded-xl backdrop-filter backdrop-blur-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#D3E0EA] mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+              </svg>
+              <h2 class="mb-6 text-2xl text-[#D3E0EA]">
+                "דור הצליח לתפוס את המהות של המקצוע שלי ולהעביר אותה בצורה אותנטית ומדויקת. התוצאות היו מעבר לציפיות שלי!"
+              </h2>
+              <div class="flex items-center">
+                <div class="w-16 h-16 rounded-full bg-[#D3E0EA] flex items-center justify-center ml-4">
+                  <span class="text-[#276678] font-bold">עז</span>
+                </div>
+                <div class="leading-tight">
+                  <h4 class="font-bold text-2xl">עמית זמל</h4>
+                  <h4 class="text-[#D3E0EA] text-xl">מאלפת כלבים</h4>
+                </div>
               </div>
             </div>
           </div>
+
+          <!-- Slide 2 -->
+          <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
+            <div class="bg-white bg-opacity-10 p-8 rounded-xl backdrop-filter backdrop-blur-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#D3E0EA] mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+              </svg>
+              <h2 class="mb-6 text-2xl text-[#D3E0EA]">
+                "העבודה עם דור שינתה לחלוטין את הנוכחות הדיגיטלית שלי. הוא הביא רעיונות חדשניים ויצירתיים שהתחברו בצורה מושלמת לקהל שלי."
+              </h2>
+              <div class="flex items-center">
+                <div class="w-16 h-16 rounded-full bg-[#D3E0EA] flex items-center justify-center ml-4">
+                  <span class="text-[#276678] font-bold">נו</span>
+                </div>
+                <div class="leading-tight">
+                  <h4 class="font-bold text-2xl">נוי ואקנין</h4>
+                  <h4 class="text-[#D3E0EA] text-xl">מדריכת יוגה</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- אפשר לשכפל שקופיות נוספות באותו פורמט -->
         </div>
 
+        <!-- הנקודות חייבות להיות בתוך אותו הורה של .slider -->
+        <div class="flex justify-center mt-4">
+          <button class="w-3 h-3 rounded-full bg-[#D3E0EA] mx-1 focus:outline-none slider-dot active" data-index="0"></button>
+          <button class="w-3 h-3 rounded-full bg-[#D3E0EA] mx-1 focus:outline-none slider-dot" data-index="1"></button>
+        </div>
       </div>
-
-      <!-- כפתורים -->
-      <button id="prev" class="absolute top-1/2 left-0 -translate-y-1/2 bg-white/20 p-2 rounded-full">
-        ◀
-      </button>
-      <button id="next" class="absolute top-1/2 right-0 -translate-y-1/2 bg-white/20 p-2 rounded-full">
-        ▶
-      </button>
     </div>
   </div>
 </section>
+
 
 <script>
 (function(){
