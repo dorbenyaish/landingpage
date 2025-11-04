@@ -1,896 +1,481 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
-  
 <head>
-  
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>דור | תוכן בלי פוזות | יוצר תוכן ומנהל סושיאל</title>
-    <!-- אייקון לכרטיסיה -->
-   <link rel="icon" type="image/png" href="favicon.png">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<!-- חיבור לפונט Heebo מגוגל -->
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>דור | תוכן בלי פוזות | יוצר תוכן ומנהל סושיאל</title>
+  <link rel="icon" type="image/png" href="favicon.png">
 
-<!-- הגדרת הפונט דנה יד -->
-<style>
-@font-face {
-  font-family: 'DanaYad';
-  src: url('./DanaYadAlefAlefAlef-Normal.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
+  <!-- Tailwind + GSAP + Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-body {
-  font-family: 'Heebo', sans-serif;
-}
-
-h2, h4, h5, h6 {
-  font-family: 'DanaYad', sans-serif;
-}
-</style>
-
-
-    <style>
-      
-<script>
-document.addEventListener("DOMContentLoaded", function () {
- 
-        // אפקט נשימה עדין
-        gsap.to("header .absolute.inset-0", {
-          scale: 1.03,
-          duration: 3,
-          yoyo: true,
-          repeat: -1,
-          ease: "sine.inOut"
-        });
-      }
+  <!-- פונט 'דנה יד' -->
+  <style>
+    @font-face {
+      font-family: 'DanaYad';
+      src: url('./DanaYadAlefAlefAlef-Normal.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
     }
-  );
-});
-</script>
-        body {
-            font-family: 'Heebo', sans-serif;
-            scroll-behavior: smooth;
-        }
-        .gradient-bg {
-            background: linear-gradient(180deg, #002a3e 0%, #326a85 100%);
-        }
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
-        .portfolio-item:hover img {
-            transform: scale(1.05);
-        }
-        .infographic-item {
-            transition: all 0.3s ease;
-        }
-        .infographic-item:hover {
-            transform: translateY(-10px);
-        }
-        .section-fade {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        .section-fade.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .custom-color-primary {
-            color: #002a3e;
-        }
-        .custom-color-secondary {
-            color: #F6F5F5;
-        }
-      .custom-color-white {
-            color: #ffffff;
-        }
-        .custom-bg-primary {
-            background-color: #276678;
-        }
-        .custom-bg-secondary {
-            background-color: #1687A7;
-        }
-        .custom-bg-light {
-            background-color: #D3E0EA;
-        }
-        .custom-bg-white {
-            background-color: #F6F5F5;
-        }
-        .custom-border-primary {
-            border-color: #276678;
-        }
-        .custom-border-secondary {
-            border-color: #1687A7;
-        }
-        .slider {
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-        }
-        .slider-item {
-            scroll-snap-align: start;
-        }
-      
-      .hero-blur {
-  filter: blur(20px);
-  opacity: 0;
-  transform: translateY(30px);
-}
 
-      iframe {
-  max-width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-}
+    body { font-family: 'Heebo', sans-serif; scroll-behavior: smooth; }
+    h2, h4, h5, h6 { font-family: 'DanaYad', sans-serif; }
 
-/* ספציפית לסרטונים בדף הנחיתה */
-.story-video iframe,
-#about iframe {
-  max-width: 300px;
-  width: 100%;
-  margin: 0 auto;
-}
-      
-    .slider-item > div {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* מרכז אופקית */
-  text-align: center;  /* טקסט במרכז */
-}
-      /* וידאו קטן ומרוכז */
-.slider-item .story-video {
-  max-width: 300px;
-  width: 100%;
-  margin: 0 auto;
-}
-  
-      .slider-item {
-  min-width: 40% !important; /* כרגע יש לך 70% או 80% */
-  max-width: 300px; /* גבול מקסימלי לרוחב */
-  margin: 0 auto; /* מרכז את האייטם בתוך הסליידר */
-}
-      
-      html {
-  scroll-behavior: smooth;
-}
-    </style>
+    /* צבעים וכללי עיצוב */
+    .gradient-bg { background: linear-gradient(180deg, #002a3e 0%, #326a85 100%); }
+    .section-fade { opacity: 0; transform: translateY(20px); transition: opacity .8s ease, transform .8s ease; }
+    .section-fade.visible { opacity: 1; transform: translateY(0); }
+    .custom-color-primary { color: #002a3e; }
+    .custom-color-secondary { color: #F6F5F5; }
+    .custom-bg-white { background-color: #F6F5F5; }
+
+    /* סלאידרים */
+    .slider { scroll-snap-type: x mandatory; scroll-behavior: smooth; }
+    .slider-item { scroll-snap-align: start; }
+    .hide-scrollbar { -ms-overflow-style:none; scrollbar-width:none; }
+    .hide-scrollbar::-webkit-scrollbar { display:none; }
+
+    /* חשוב: לא לכפות יחס/גובה על כל iframes כדי לא לחתוך אינסטגרם */
+    /* הגבלה ל-YouTube בלבד במידת הצורך */
+    #about iframe[src*="youtube.com/embed"] {
+      max-width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+    }
+
+    /* אינסטגרם – עזרה לריספונסיביות ואי-חיתוך */
+    .instagram-media { 
+      margin: 0 auto !important;
+      width: 100% !important;
+      max-width: 540px !important; /* מרבי מומלץ ע"י אינסטה; אפשר 320-420 בהתאם לרוחב הכרטיס */
+      border-radius: 12px !important;
+    }
+    .instagram-media iframe { height: auto !important; aspect-ratio: auto !important; }
+
+    /* כפתור חזרה למעלה */
+    #backToTop {
+      position: fixed; bottom: 30px; left: 30px; z-index: 1000;
+      background-color: #1687A7; border: none; padding: 12px; border-radius: 9999px;
+      cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,.2);
+      opacity: 0; transition: opacity .3s ease, transform .3s ease;
+      pointer-events: none; display: flex; align-items: center; justify-content: center;
+    }
+    #backToTop.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    #backToTop:hover { background-color: #276678; }
+
+    /* כפתור וואטסאפ צף */
+    #whatsappBtn {
+      position: fixed; bottom: 30px; right: 30px; z-index: 1000;
+      background-color: #25D366; border: none; padding: 12px; border-radius: 9999px;
+      cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,.2);
+      transition: opacity .3s ease, transform .3s ease, background-color .3s ease;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #whatsappBtn svg { width: 28px; height: 28px; }
+    #whatsappBtn:hover { background-color: #1ebe5d; transform: scale(1.05); }
+  </style>
 </head>
+
 <body class="custom-bg-white text-gray-800">
-    <!-- Hero Section -->
-    <header class="min-h-screen flex items-center relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-r from-[#002a3e] to-[#326a85] opacity-100"></div>
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col items-center text-center">
-                <h1 class="text-5xl md:text-8xl font-bold text mb-1">שלום! <span class="custom-color-secondary">אני דור</span></h1>
-                <p class="text-xl md:text-4xl text-[#D3E0EA] mb-8">יוצר תוכן ומנהל סושיאל</p>
-                <div class="w-20 h-0.5 bg-[#D3E0EA] mb-6"></div>
-                <h3 class="text-lg md:text-xl text-white max-w-2xl mb-8 font-light">עובד עם עסקים, אמנים ומותגים. הקו שלי הוא תוכן נקי, אותנטי, מותאם ומדויק למה שהקהל באמת רוצה לראות. אני מטפל בכל התהליך- משלב הרעיון והקריאייטיב, דרך צילום ועריכה, ועד ניהול עמודים ובניית אסטרטגיה.</h3>
-                <div class="flex flex-wrap gap-4 justify-center">
-                    <a href="#portfolio" class="px-8 py-3 bg-white text-[#276678] rounded-full font-medium hover:bg-[#D3E0EA] transition duration-300 transform hover:scale-105">הצג עבודות</a>
-                    <a href="#contact" class="px-8 py-3 border-2 border-white text-white rounded-full font-medium hover:bg-white hover:text-[#276678] transition duration-300 transform hover:scale-105">צור קשר</a>
-                </div> 
-            </div>
-          
+  <!-- Hero Section -->
+  <header class="min-h-screen flex items-center relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-[#002a3e] to-[#326a85] opacity-100"></div>
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="flex flex-col items-center text-center">
+        <h1 class="text-5xl md:text-8xl font-bold text mb-1">שלום! <span class="custom-color-secondary">אני דור</span></h1>
+        <p class="text-xl md:text-4xl text-[#D3E0EA] mb-8">יוצר תוכן ומנהל סושיאל</p>
+        <div class="w-20 h-0.5 bg-[#D3E0EA] mb-6"></div>
+        <h3 class="text-lg md:text-xl text-white max-w-2xl mb-8 font-light">
+          עובד עם עסקים, אמנים ומותגים. הקו שלי הוא תוכן נקי, אותנטי, מותאם ומדויק למה שהקהל באמת רוצה לראות.
+          אני מטפל בכל התהליך- משלב הרעיון והקריאייטיב, דרך צילום ועריכה, ועד ניהול עמודים ובניית אסטרטגיה.
+        </h3>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="#portfolio" class="px-8 py-3 bg-white text-[#276678] rounded-full font-medium hover:bg-[#D3E0EA] transition duration-300 transform hover:scale-105">הצג עבודות</a>
+          <a href="#contact" class="px-8 py-3 border-2 border-white text-white rounded-full font-medium hover:bg-white hover:text-[#276678] transition duration-300 transform hover:scale-105">צור קשר</a>
         </div>
-        <svg class="absolute bottom-0 left-0 right-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120">
-            <path fill="#F6F5F5" fill-opacity="1" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
-        </svg>
-      
-      
-    </header>
-
-   <!-- About Section -->
-<section id="about" class="py-20 section-fade">
-  <div class="container mx-auto px-6 text-center">
-    
-    <!-- וידאו במרכז -->
-    <div class="w-full max-w-lg mx-auto rounded-xl overflow-hidden mb-10 flex justify-center">
-      <div class="story-video h-[250px] rounded-xl">
-  <iframe 
-    src="https://www.youtube.com/embed/opQSulwz2S0?autoplay=1&loop=1&playlist=opQSulwz2S0&controls=0&modestbranding=1&rel=0&enablejsapi=1"
-    frameborder="0"
-    allow="autoplay; encrypted-media"
-    allowfullscreen>
-  </iframe>
-</div>
+      </div>
     </div>
+    <svg class="absolute bottom-0 left-0 right-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120">
+      <path fill="#F6F5F5" fill-opacity="1" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+    </svg>
+  </header>
 
-    <!-- טקסט -->
-    <h2 class="text-6xl font-bold mb-6 custom-color-primary">הסיפור שלי</h2>
-    <p class="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
-      אחרי שירות צבאי אינטנסיבי ושנה של למידה וחיפוש עצמי, הבנתי שהכישרון האמיתי שלי תמיד היה לידי- היכולת לראות ולהבין אנשים, ולספר את הסיפור שלהם.
-    </p>
-    
-    <p class="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
-      אני דור, ואני מציע שירותי תוכן, קריאייטיב וניהול סושיאל- בלי פוזות, בלי מסכות, כי זה מה שעובד באמת. כי כשאתה מדבר באנושיות- אנשים מקשיבים. אני מאמין שתוכן אמיתי ואותנטי הוא המפתח ליצירת קשר משמעותי עם הקהל. בעולם מלא בתוכן מזויף ומשוכפל, אני מביא את הקול האמיתי והייחודי שלכם לקדמת הבמה. 
-    </p>
-    
-    <p class="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
-      יש לי עין חדה לצילום ולעיצוב, חוש מדויק לכתיבה ועריכה, ויכולת להפוך רעיון מפוזר לתוכן פרקטי ומדויק שמדבר לקהל שלך בגובה העיניים וישר ללב. אז אם אתם מרגישים שזה הזמן שהמותג שלכם ידבר סוף סוף בקול שלכם- דברו איתי.
-    </p>
+  <!-- About Section -->
+  <section id="about" class="py-20 section-fade">
+    <div class="container mx-auto px-6 text-center">
 
-        <h2 class="text-5xl font-bold mb-5 custom-color-primary">מה אני מציע?</h2>
-
-    <!-- כרטיסים -->
-    <div class="flex flex-col md:flex-row justify-center gap-4 mt-8">
-      
-      <!-- כרטיס 1 -->
-      <div class="bg-[#eeeeee] rounded-lg p-4 flex items-center gap-4">
-        <div class="w-12 h-12 rounded-full bg-[#1687A7] flex items-center justify-center">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
-          </svg>
+      <!-- וידאו במרכז — ריל אינסטגרם שנבחר -->
+      <div class="w-full max-w-lg mx-auto rounded-xl overflow-hidden mb-10 flex justify-center">
+        <div class="rounded-xl w-full">
+          <blockquote class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/reel/DNLHSSns-F-/"
+            data-instgrm-version="14"
+            style="background:#FFF;border:0;border-radius:12px;box-shadow:none;margin:0 auto;max-width:540px;min-width:220px;width:100%;">
+          </blockquote>
         </div>
-        <h3 class="font-bold text-xl">ניהול סושיאל</h3>
       </div>
 
-      <!-- כרטיס 2 -->
-      <div class="bg-[#eeeeee] rounded-lg p-4 flex items-center gap-4">
-        <div class="w-12 h-12 rounded-full bg-[#1687A7] flex items-center justify-center">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-          </svg>
-        </div>
-        <h3 class="font-bold text-xl">יצירת תוכן</h3>
-      </div>
+      <h2 class="text-6xl font-bold mb-6 custom-color-primary">הסיפור שלי</h2>
+      <p class="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+        אחרי שירות צבאי אינטנסיבי ושנה של למידה וחיפוש עצמי, הבנתי שהכישרון האמיתי שלי תמיד היה לידי- היכולת לראות ולהבין אנשים, ולספר את הסיפור שלהם.
+      </p>
+      <p class="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+        אני דור, ואני מציע שירותי תוכן, קריאייטיב וניהול סושיאל- בלי פוזות, בלי מסכות, כי זה מה שעובד באמת. כי כשאתה מדבר באנושיות- אנשים מקשיבים. אני מאמין שתוכן אמיתי ואותנטי הוא המפתח ליצירת קשר משמעותי עם הקהל. בעולם מלא בתוכן מזויף ומשוכפל, אני מביא את הקול האמיתי והייחודי שלכם לקדמת הבמה.
+      </p>
+      <p class="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+        יש לי עין חדה לצילום ולעיצוב, חוש מדויק לכתיבה ועריכה, ויכולת להפוך רעיון מפוזר לתוכן פרקטי ומדויק שמדבר לקהל שלך בגובה העיניים וישר ללב. אז אם אתם מרגישים שזה הזמן שהמותג שלכם ידבר סוף סוף בקול שלכם- דברו איתי.
+      </p>
 
-      <!-- כרטיס 3 -->
-      <div class="bg-[#eeeeee] rounded-lg p-4 flex items-center gap-4">
-        <div class="w-12 h-12 rounded-full bg-[#1687A7] flex items-center justify-center">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-          </svg>
+      <h2 class="text-5xl font-bold mb-5 custom-color-primary">מה אני מציע?</h2>
+      <div class="flex flex-col md:flex-row justify-center gap-4 mt-8">
+        <div class="bg-[#eeeeee] rounded-lg p-4 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full bg-[#1687A7] flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></svg>
+          </div>
+          <h3 class="font-bold text-xl">ניהול סושיאל</h3>
         </div>
-        <h3 class="font-bold text-xl">שיווק דיגיטלי</h3>
+        <div class="bg-[#eeeeee] rounded-lg p-4 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full bg-[#1687A7] flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <h3 class="font-bold text-xl">יצירת תוכן</h3>
+        </div>
+        <div class="bg-[#eeeeee] rounded-lg p-4 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full bg-[#1687A7] flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/></svg>
+          </div>
+          <h3 class="font-bold text-xl">שיווק דיגיטלי</h3>
+        </div>
       </div>
 
     </div>
+  </section>
 
-  </div>
-</section>
-
-
-
-    <!-- Infographics Section -->
-    <section class="py-20 bg-[#002a3e] section-fade">
-        <div class="container mx-auto px-6">
-            <h1 class="text-5xl font-bold text-center mb-16 custom-color-white">למה לעבוד איתי?</h1>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div class="infographic-item bg-white rounded-xl shadow-lg p-8 text-center">
-                    <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 custom-color-primary">אותנטיות</h3>
-                    <p class="text-gray-600">יצירת תוכן אמיתי שמשקף את הערכים והקול הייחודי של המותג שלך.</p>
-                    <div class="mt-6 h-1 w-20 bg-[#1687A7] mx-auto"></div>
-                </div>
-                
-                <div class="infographic-item bg-white rounded-xl shadow-lg p-8 text-center">
-                    <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 custom-color-primary">תוצאות</h3>
-                    <p class="text-gray-600">אסטרטגיה ממוקדת מטרה שמביאה לתוצאות מדידות ואפקטיביות.</p>
-                    <div class="mt-6 h-1 w-20 bg-[#1687A7] mx-auto"></div>
-                </div>
-                
-                <div class="infographic-item bg-white rounded-xl shadow-lg p-8 text-center">
-                    <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 custom-color-primary">יעילות</h3>
-                    <p class="text-gray-600">חיסכון בזמן ומשאבים עם תהליכי עבודה מדויקים ומותאמים אישית אליך ולצרכים שלך.</p>
-                    <div class="mt-6 h-1 w-20 bg-[#1687A7] mx-auto"></div>
-                </div>
-            </div>
+  <!-- Infographics Section -->
+  <section class="py-20 bg-[#002a3e] section-fade">
+    <div class="container mx-auto px-6">
+      <h1 class="text-5xl font-bold text-center mb-16 text-white">למה לעבוד איתי?</h1>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="infographic-item bg-white rounded-xl shadow-lg p-8 text-center">
+          <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"/></svg>
+          </div>
+          <h3 class="text-xl font-bold mb-4 custom-color-primary">אותנטיות</h3>
+          <p class="text-gray-600">יצירת תוכן אמיתי שמשקף את הערכים והקול הייחודי של המותג שלך.</p>
+          <div class="mt-6 h-1 w-20 bg-[#1687A7] mx-auto"></div>
         </div>
-    </section>
 
-  <!-- ===== עבודות נבחרות (Slider איכותי) ===== -->
-<section id="portfolio" class="py-20 section-fade" dir="rtl">
-  <div class="container mx-auto px-6">
-    <h2 class="text-7xl font-bold text-center mb-4 custom-color-primary">עבודות נבחרות</h2>
-    <p class="text-xl text-center text-gray-600 mb-10 max-w-2xl mx-auto">
-      כמה מהפרויקטים שלי ברשתות עם לקוחות שונים מתחומים שונים, כדי להמחיש את סגנון העבודה.
-    </p>
-
-    <div class="relative">
-      <!-- חיצים -->
-      <button id="portPrev"
-        class="hidden md:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-[#002a3e] text-white items-center justify-center shadow hover:scale-105 transition"
-        aria-label="הקודם">‹</button>
-      <button id="portNext"
-        class="hidden md:flex absolute -left-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-[#002a3e] text-white items-center justify-center shadow hover:scale-105 transition"
-        aria-label="הבא">›</button>
-
-      <!-- מסילה נגללת -->
-      <div id="portTrack"
-        class="flex overflow-x-auto gap-5 pb-2 hide-scrollbar snap-x snap-mandatory"
-        aria-label="עבודות נבחרות" dir="ltr">
-        
-        <!-- 1. תרצה כהן – השקת שער לאישה (Reel) -->
-        <article class="min-w-[260px] max-w-[320px] snap-start flex-shrink-0 bg-[#eeeeee] rounded-xl overflow-hidden">
-          <div class="p-4">
-            <h3 class="text-lg font-bold custom-color-primary">תרצה כהן — השקת שער לאישה</h3>
-            <p class="text-sm text-gray-600">ריל השקה | קונספט, צילום, עריכה</p>
+        <div class="infographic-item bg-white rounded-xl shadow-lg p-8 text-center">
+          <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
           </div>
-          <div class="px-3 pb-4">
-            <div class="w-full aspect-[9/16] rounded-lg overflow-hidden">
-              <blockquote class="instagram-media"
-                data-instgrm-permalink="https://www.instagram.com/reel/DQl5eLVDEzp/"
-                data-instgrm-version="14"
-                style="background:#FFF;border:0;border-radius:12px;box-shadow:none;margin:0 auto;max-width:540px;min-width:220px;width:100%;">
-              </blockquote>
+          <h3 class="text-xl font-bold mb-4 custom-color-primary">תוצאות</h3>
+          <p class="text-gray-600">אסטרטגיה ממוקדת מטרה שמביאה לתוצאות מדידות ואפקטיביות.</p>
+          <div class="mt-6 h-1 w-20 bg-[#1687A7] mx-auto"></div>
+        </div>
+
+        <div class="infographic-item bg-white rounded-xl shadow-lg p-8 text-center">
+          <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold mb-4 custom-color-primary">יעילות</h3>
+          <p class="text-gray-600">חיסכון בזמן ומשאבים עם תהליכי עבודה מדויקים ומותאמים אישית אליך ולצרכים שלך.</p>
+          <div class="mt-6 h-1 w-20 bg-[#1687A7] mx-auto"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- עבודות נבחרות (Slider איכותי) -->
+  <section id="portfolio" class="py-20 section-fade" dir="rtl">
+    <div class="container mx-auto px-6">
+      <h2 class="text-7xl font-bold text-center mb-4 custom-color-primary">עבודות נבחרות</h2>
+      <p class="text-xl text-center text-gray-600 mb-10 max-w-2xl mx-auto">
+        כמה מהפרויקטים שלי ברשתות עם לקוחות שונים מתחומים שונים, כדי להמחיש את סגנון העבודה.
+      </p>
+
+      <div class="relative">
+        <!-- חיצים -->
+        <button id="portPrev"
+          class="hidden md:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-[#002a3e] text-white items-center justify-center shadow hover:scale-105 transition"
+          aria-label="הקודם">‹</button>
+        <button id="portNext"
+          class="hidden md:flex absolute -left-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-[#002a3e] text-white items-center justify-center shadow hover:scale-105 transition"
+          aria-label="הבא">›</button>
+
+        <!-- מסילה נגללת -->
+        <div id="portTrack" class="flex overflow-x-auto gap-5 pb-2 hide-scrollbar snap-x snap-mandatory" aria-label="עבודות נבחרות" dir="ltr">
+
+          <!-- 1 -->
+          <article class="min-w-[260px] max-w-[320px] snap-start flex-shrink-0 bg-[#eeeeee] rounded-xl overflow-hidden">
+            <div class="p-4">
+              <h3 class="text-lg font-bold custom-color-primary">תרצה כהן — השקת שער לאישה</h3>
+              <p class="text-sm text-gray-600">ריל השקה | קונספט, צילום, עריכה</p>
             </div>
-          </div>
-        </article>
-
-        <!-- 2. יובל דיין – צילומי אולפן (Reel) -->
-        <article class="min-w-[260px] max-w-[320px] snap-start flex-shrink-0 bg-[#eeeeee] rounded-xl overflow-hidden">
-          <div class="p-4">
-            <h3 class="text-lg font-bold custom-color-primary">יובל דיין — צילומי אולפן</h3>
-            <p class="text-sm text-gray-600">ריל ויזואלי | אווירה וסטייל</p>
-          </div>
-          <div class="px-3 pb-4">
-            <div class="w-full aspect-[9/16] rounded-lg overflow-hidden">
-              <blockquote class="instagram-media"
-                data-instgrm-permalink="https://www.instagram.com/reel/DOYEi8hjNjc/"
-                data-instgrm-version="14"
-                style="background:#FFF;border:0;border-radius:12px;box-shadow:none;margin:0 auto;max-width:540px;min-width:220px;width:100%;">
-              </blockquote>
-            </div>
-          </div>
-        </article>
-
-        <!-- 3. סרטון אווירה אישי מהופעות (Reel) -->
-        <article class="min-w-[260px] max-w-[320px] snap-start flex-shrink-0 bg-[#eeeeee] rounded-xl overflow-hidden">
-          <div class="p-4">
-            <h3 class="text-lg font-bold custom-color-primary">אווירת הופעות</h3>
-            <p class="text-sm text-gray-600">סטורי-טלינג מהשטח</p>
-          </div>
-          <div class="px-3 pb-4">
-            <div class="w-full aspect-[9/16] rounded-lg overflow-hidden">
-              <blockquote class="instagram-media"
-                data-instgrm-permalink="https://www.instagram.com/reel/DQUgWWbDZls/"
-                data-instgrm-version="14"
-                style="background:#FFF;border:0;border-radius:12px;box-shadow:none;margin:0 auto;max-width:540px;min-width:220px;width:100%;">
-              </blockquote>
-            </div>
-          </div>
-        </article>
-
-        <!-- 4. סרטון תדמית — Selvert Thermal (Reel) -->
-        <article class="min-w-[260px] max-w-[320px] snap-start flex-shrink-0 bg-[#eeeeee] rounded-xl overflow-hidden">
-          <div class="p-4">
-            <h3 class="text-lg font-bold custom-color-primary">Selvert Thermal — סרטון תדמית</h3>
-            <p class="text-sm text-gray-600">קריאייטיב, בימוי ותוכן</p>
-          </div>
-          <div class="px-3 pb-4">
-            <div class="w-full aspect-[9/16] rounded-lg overflow-hidden">
-              <blockquote class="instagram-media"
-                data-instgrm-permalink="https://www.instagram.com/reel/DPJtrSPjDoN/"
-                data-instgrm-version="14"
-                style="background:#FFF;border:0;border-radius:12px;box-shadow:none;margin:0 auto;max-width:540px;min-width:220px;width:100%;">
-              </blockquote>
-            </div>
-          </div>
-        </article>
-
-        <!-- 5. סיכום משחק — מכבי פ"ת כדורסל (Reel) -->
-        <article class="min-w-[260px] max-w-[320px] snap-start flex-shrink-0 bg-[#eeeeee] rounded-xl overflow-hidden">
-          <div class="p-4">
-            <h3 class="text-lg font-bold custom-color-primary">מכבי פ"ת — סיכום משחק</h3>
-            <p class="text-sm text-gray-600">היילייטס, קצב וגריד</p>
-          </div>
-          <div class="px-3 pb-4">
-            <div class="w-full aspect-[9/16] rounded-lg overflow-hidden">
-              <blockquote class="instagram-media"
-                data-instgrm-permalink="https://www.instagram.com/reel/DQhOLZ4jH9x/"
-                data-instgrm-version="14"
-                style="background:#FFF;border:0;border-radius:12px;box-shadow:none;margin:0 auto;max-width:540px;min-width:220px;width:100%;">
-              </blockquote>
-            </div>
-          </div>
-        </article>
-
-        <!-- 6. היילייט מתעדכן (לא ניתן להטמעה, כרטיס מקשר) -->
-        <article class="min-w-[260px] max-w-[320px] snap-start flex-shrink-0 bg-[#eeeeee] rounded-xl overflow-hidden">
-          <div class="p-4">
-            <h3 class="text-lg font-bold custom-color-primary">תיק עבודות מורחב — היילייט</h3>
-            <p class="text-sm text-gray-600">עוקב ומתעדכן באינסטגרם</p>
-          </div>
-          <div class="px-3 pb-5">
-            <div class="w-full aspect-[9/16] rounded-lg bg-white/70 border border-gray-200 flex items-center justify-center text-center p-4">
-              <div>
-                <div class="text-5xl mb-2">📌</div>
-                <p class="text-sm text-gray-700 mb-3">צפה בהיילייט המתעדכן: עוד דוגמאות חיות</p>
-                <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTM1NzM1MzI4OTQzMDMy?igsh=MW5jODdqM2lkYWN3dw"
-                   target="_blank"
-                   class="inline-block px-4 py-2 rounded-full bg-[#002a3e] text-white text-sm hover:bg-[#276678] transition">
-                  מעבר להיילייט
-                </a>
+            <div class="px-3 pb-4">
+              <div class="rounded-lg overflow-hidden">
+                <blockquote class="instagram-media"
+                  data-instgrm-permalink="https://www.instagram.com/reel/DQl5eLVDEzp/"
+                  data-instgrm-version="14"
+                  style="background:#FFF;border:0;border-radius:12px;box-shadow:none;margin:0 auto;max-width:540px;min-width:220px;width:100%;">
+                </blockquote>
               </div>
             </div>
-          </div>
-        </article>
+          </article>
 
+          <!-- 2 -->
+          <article class="min-w-[260px] max-w-[320px] snap-start flex-shrink-0 bg-[#eeeeee] rounded-xl overflow-hidden">
+            <div class="p-4">
+              <h3 class="text-lg font-bold custom-color-primary">יובל דיין — צילומי אולפן</h3>
+              <p class="text-sm text-gray-600">ריל ויזואלי | אווירה וסטייל</p>
+            </div>
+            <div class="px-3 pb-4">
+              <div class="rounded-lg overflow-hidden">
+                <blockquote class="instagram-media"
+                  data-instgrm-permalink="https://www.instagram.com/reel/DOYEi8hjNjc/"
+                  data-instgrm-version="14"
+                  style="background:#FFF;border:0;border-radius:12px;box-shadow:none;margin:0 auto;max-width:540px;min-width:220px;width:100%;">
+                </blockquote>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3 -->
+          <article class="min-w-[260px] max-w-[320px] snap-start flex-shrink-0 bg-[#eeeeee] rounded-xl overflow-hidden">
+            <div class="p-4">
+              <h3 class="text-lg font-bold custom-color-primary">אווירת הופעות</h3>
+              <p class="text-sm text-gray-600">סטורי-טלינג מהשטח</p>
+            </div>
+            <div class="px-3 pb-4">
+              <div class="rounded-lg overflow-hidden">
+                <blockquote class="instagram-media"
+                  data-instgrm-permalink="https://www.instagram.com/reel/DQUgWWbDZls/"
+                  data-instgrm-version="14"
+                  style="background:#FFF;border:0;border-radius:12px;box-shadow:none;margin:0 auto;max-width:540px;min-width:220px;width:100%;">
+                </blockquote>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4 -->
+          <article class="min-w-[260px] max-w-[320px] snap-start flex-shrink-0 bg-[#eeeeee] rounded-xl overflow-hidden">
+            <div class="p-4">
+              <h3 class="text-lg font-bold custom-color-primary">Selvert Thermal — סרטון תדמית</h3>
+              <p class="text-sm text-gray-600">קריאייטיב, בימוי ותוכן</p>
+            </div>
+            <div class="px-3 pb-4">
+              <div class="rounded-lg overflow-hidden">
+                <blockquote class="instagram-media"
+                  data-instgrm-permalink="https://www.instagram.com/reel/DPJtrSPjDoN/"
+                  data-instgrm-version="14"
+                  style="background:#FFF;border:0;border-radius:12px;box-shadow:none;margin:0 auto;max-width:540px;min-width:220px;width:100%;">
+                </blockquote>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5 -->
+          <article class="min-w-[260px] max-w-[320px] snap-start flex-shrink-0 bg-[#eeeeee] rounded-xl overflow-hidden">
+            <div class="p-4">
+              <h3 class="text-lg font-bold custom-color-primary">מכבי פ"ת — סיכום משחק</h3>
+              <p class="text-sm text-gray-600">היילייטס, קצב וגריד</p>
+            </div>
+            <div class="px-3 pb-4">
+              <div class="rounded-lg overflow-hidden">
+                <blockquote class="instagram-media"
+                  data-instgrm-permalink="https://www.instagram.com/reel/DQhOLZ4jH9x/"
+                  data-instgrm-version="14"
+                  style="background:#FFF;border:0;border-radius:12px;box-shadow:none;margin:0 auto;max-width:540px;min-width:220px;width:100%;">
+                </blockquote>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6: היילייט מקשר -->
+          <article class="min-w-[260px] max-w-[320px] snap-start flex-shrink-0 bg-[#eeeeee] rounded-xl overflow-hidden">
+            <div class="p-4">
+              <h3 class="text-lg font-bold custom-color-primary">תיק עבודות מורחב — היילייט</h3>
+              <p class="text-sm text-gray-600">עוקב ומתעדכן באינסטגרם</p>
+            </div>
+            <div class="px-3 pb-5">
+              <div class="w-full rounded-lg bg-white/70 border border-gray-200 flex items-center justify-center text-center p-4">
+                <div>
+                  <div class="text-5xl mb-2">📌</div>
+                  <p class="text-sm text-gray-700 mb-3">צפה בהיילייט המתעדכן: עוד דוגמאות חיות</p>
+                  <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTM1NzM1MzI4OTQzMDMy?igsh=MW5jODdqM2lkYWN3dw"
+                     target="_blank"
+                     class="inline-block px-4 py-2 rounded-full bg-[#002a3e] text-white text-sm hover:bg-[#276678] transition">
+                    מעבר להיילייט
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- סגנון עזר לסקרול נקי -->
-<style>
-  .hide-scrollbar { -ms-overflow-style:none; scrollbar-width:none; }
-  .hide-scrollbar::-webkit-scrollbar { display:none; }
-</style>
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 section-fade">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-xl overflow-hidden">
+        <div class="md:flex">
+          <div class="md:w-1/2 gradient-bg p-10 text-white text-center">
+            <h2 class="text-5xl font-bold mb-6">בואו נדבר!</h2>
+            <p class="mb-8">מעוניינים לשמוע עוד על איך אני יכול לעזור לכם לנהל וליצור תוכן אותנטי שמדבר אל הקהל שלכם? השאירו פרטים ואחזור אליכם בהקדם.</p>
 
-<!-- לוגיקת חיצים + טעינת embed של אינסטגרם -->
-<script>
-  (function initPortfolio(){
-    // טעינת סקריפט ההטמעה (פעם אחת)
-    function loadIG(){
+            <div class="flex flex-wrap justify-center gap-6">
+              <!-- וואטסאפ -->
+              <a href="https://did.li/rDKZH" target="_blank"
+                class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition">
+                <svg class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16.003 2.002c-7.736 0-14.001 6.264-14.001 14 0 2.469.645 4.882 1.87 7.008l-1.978 7.317 7.512-1.968a13.929 13.929 0 006.597 1.647h.001c7.736 0 14-6.264 14-14s-6.264-14.004-14.001-14.004zm0 25.998a11.943 11.943 0 01-6.09-1.657l-.436-.258-4.463 1.17 1.192-4.354-.283-.447a11.95 11.95 0 01-1.851-6.399c0-6.617 5.383-12 12.001-12 6.617 0 12 5.383 12 12s-5.383 12-12 12zm6.584-8.583c-.359-.18-2.121-1.043-2.45-1.163-.33-.12-.572-.18-.814.18s-.935 1.163-1.146 1.403c-.21.24-.42.27-.779.09-.359-.18-1.514-.557-2.884-1.777-1.066-.951-1.786-2.126-1.995-2.485-.21-.359-.022-.553.158-.732.162-.161.36-.42.539-.63.18-.21.24-.359.36-.598.12-.239.06-.449-.03-.628-.09-.18-.814-1.963-1.115-2.685-.293-.7-.591-.606-.814-.616l-.693-.01c-.24 0-.628.09-.957.449s-1.257 1.229-1.257 2.998 1.287 3.48 1.466 3.719c.18.239 2.538 3.873 6.152 5.43.859.371 1.53.592 2.054.758.864.275 1.65.236 2.273.143.693-.104 2.121-.869 2.422-1.708.3-.839.3-1.562.21-1.708-.09-.15-.329-.24-.688-.42z"/></svg>
+              </a>
+
+              <!-- ג׳ימייל -->
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dor.ben.yaish@gmail.com&su=%D7%9E%D7%99%D7%99%D7%9C%20%D7%93%D7%A8%D7%9A%20%D7%90%D7%AA%D7%A8%20%D7%94%D7%A0%D7%97%D7%99%D7%AA%D7%94&body=%D7%9E%D7%95%D7%96%D7%9E%D7%A0%D7%99%D7%9D%20%D7%9C%D7%94%D7%A7%D7%9C%D7%99%D7%93%20%D7%9B%D7%90%D7%9F%20%D7%90%D7%99%D7%9A%20%D7%90%D7%95%D7%9B%D7%9C%20%D7%9C%D7%A2%D7%96%D7%95%D7%A8%20%D7%9C%D7%9B%D7%9D!%20%3A)"
+                 target="_blank"
+                 class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2v.511l-8 5.333-8-5.333V6h16zm0 12H4V8.489l8 5.334 8-5.334V18z"/></svg>
+              </a>
+
+              <!-- אינסטגרם -->
+              <a href="https://instagram.com/dorbenyaish" target="_blank"
+                 class="w-12 h-12 bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2A5.75 5.75 0 002 7.75v8.5A5.75 5.75 0 007.75 22h8.5A5.75 5.75 0 0022 16.25v-8.5A5.75 5.75 0 0016.25 2h-8.5zM12 7.25a4.75 4.75 0 110 9.5 4.75 4.75 0 010-9.5zm0 1.5a3.25 3.25 0 100 6.5 3.25 3.25 0 000-6.5zm4.38-.88a1.13 1.13 0 110 2.26 1.13 1.13 0 010-2.26z"/></svg>
+              </a>
+
+              <!-- טיקטוק -->
+              <a href="https://www.tiktok.com/@dorbenyaish" target="_blank"
+                 class="w-12 h-12 bg-black rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M15.75 2v2.873c.933.643 2.051 1.09 3.25 1.197v2.61a7.005 7.005 0 01-3.25-.812v7.881a5.75 5.75 0 11-5.75-5.75c.25 0 .493.018.73.053v2.515a3.25 3.25 0 103.25 3.25V2h1.77z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="md:w-1/2 p-10">
+            <form id="contactForm" class="space-y-6">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">שם מלא</label>
+                <input type="text" id="name" name="from_name" required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1687A7]">
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">מייל</label>
+                <input type="email" id="email" name="reply_to" required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1687A7]">
+              </div>
+              <div>
+                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">טלפון</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{9,10}"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1687A7]">
+              </div>
+              <div>
+                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">איך אוכל לעזור?</label>
+                <textarea id="message" name="message" rows="4" required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1687A7]"></textarea>
+              </div>
+              <div>
+                <button type="submit"
+                  class="w-full px-6 py-3 bg-[#002a3e] text-white font-medium rounded-md hover:bg-[#276678] transition duration-300">
+                  שלחו הודעה
+                </button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 bg-[#002a3e] text-white">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-2xl font-bold">דור</h1>
+      <h2 class="text mb-3">תוכן בלי פוזות.</h2>
+      <div class="w-16 h-1 bg-[#1687A7] mx-auto mb-3"></div>
+      <p class="text-[#D3E0EA] text-sm">&copy; 2025 כל הזכויות שמורות</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Instagram embed (פעם אחת) -->
+  <script>
+    (function loadInstagramEmbed(){
       if (window.instgrm) { window.instgrm.Embeds.process(); return; }
       var s = document.createElement('script');
       s.async = true;
       s.src = "https://www.instagram.com/embed.js";
       s.onload = function(){ window.instgrm && window.instgrm.Embeds.process(); };
       document.head.appendChild(s);
-    }
-    loadIG();
+    })();
+  </script>
 
-    // חיצים לגלילה
-    const track = document.getElementById('portTrack');
-    const prev  = document.getElementById('portPrev');
-    const next  = document.getElementById('portNext');
-
-    function scrollByAmount(dir){
-      const amount = Math.max(320, track.clientWidth * 0.9);
-      track.scrollBy({ left: dir * amount, behavior: 'smooth' });
-    }
-    prev && prev.addEventListener('click', () => scrollByAmount(-1));
-    next && next.addEventListener('click', () => scrollByAmount( 1));
-  })();
-</script>
-
-
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 section-fade">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-xl overflow-hidden">
-                <div class="md:flex">
-                    <div class="md:w-1/2 gradient-bg p-10 text-white text-center">
-                        <h2 class="text-5xl font-bold mb-6">בואו נדבר!</h2>
-                        <p class="mb-8">מעוניינים לשמוע עוד על איך אני יכול לעזור לכם לנהל וליצור תוכן אותנטי שמדבר אל הקהל שלכם? השאירו פרטים ואחזור אליכם בהקדם.</p>
-                        <div class="flex flex-wrap justify-center gap-6">
-
-    <!-- וואטסאפ -->
-    <a href="https://did.li/rDKZH" target="_blank"
-       class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition">
-      <svg class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-        <path d="M16.003 2.002c-7.736 0-14.001 6.264-14.001 14 0 2.469.645 4.882 1.87 7.008l-1.978 7.317 7.512-1.968a13.929 13.929 0 006.597 1.647h.001c7.736 0 14-6.264 14-14s-6.264-14.004-14.001-14.004zm0 25.998a11.943 11.943 0 01-6.09-1.657l-.436-.258-4.463 1.17 1.192-4.354-.283-.447a11.95 11.95 0 01-1.851-6.399c0-6.617 5.383-12 12.001-12 6.617 0 12 5.383 12 12s-5.383 12-12 12zm6.584-8.583c-.359-.18-2.121-1.043-2.45-1.163-.33-.12-.572-.18-.814.18s-.935 1.163-1.146 1.403c-.21.24-.42.27-.779.09-.359-.18-1.514-.557-2.884-1.777-1.066-.951-1.786-2.126-1.995-2.485-.21-.359-.022-.553.158-.732.162-.161.36-.42.539-.63.18-.21.24-.359.36-.598.12-.239.06-.449-.03-.628-.09-.18-.814-1.963-1.115-2.685-.293-.7-.591-.606-.814-.616l-.693-.01c-.24 0-.628.09-.957.449s-1.257 1.229-1.257 2.998 1.287 3.48 1.466 3.719c.18.239 2.538 3.873 6.152 5.43.859.371 1.53.592 2.054.758.864.275 1.65.236 2.273.143.693-.104 2.121-.869 2.422-1.708.3-.839.3-1.562.21-1.708-.09-.15-.329-.24-.688-.42z"/>
-      </svg>
-    </a>
-
-   <!-- ג׳ימייל -->
-<a href="https://mail.google.com/mail/?view=cm&fs=1&to=dor.ben.yaish@gmail.com&su=%D7%9E%D7%99%D7%99%D7%9C%20%D7%93%D7%A8%D7%9A%20%D7%90%D7%AA%D7%A8%20%D7%94%D7%A0%D7%97%D7%99%D7%AA%D7%94&body=%D7%9E%D7%95%D7%96%D7%9E%D7%A0%D7%99%D7%9D%20%D7%9C%D7%94%D7%A7%D7%9C%D7%99%D7%93%20%D7%9B%D7%90%D7%9F%20%D7%90%D7%99%D7%9A%20%D7%90%D7%95%D7%9B%D7%9C%20%D7%9C%D7%A2%D7%96%D7%95%D7%A8%20%D7%9C%D7%9B%D7%9D!%20%3A)" 
-   target="_blank"
-   class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition">
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" fill="currentColor" viewBox="0 0 24 24">
-    <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2v.511l-8 5.333-8-5.333V6h16zm0 12H4V8.489l8 5.334 8-5.334V18z"/>
-  </svg>
-</a>
-      
-                          
-    <!-- אינסטגרם -->
-    <a href="https://instagram.com/dorbenyaish" target="_blank"
-       class="w-12 h-12 bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M7.75 2A5.75 5.75 0 002 7.75v8.5A5.75 5.75 0 007.75 22h8.5A5.75 5.75 0 0022 16.25v-8.5A5.75 5.75 0 0016.25 2h-8.5zM12 7.25a4.75 4.75 0 110 9.5 4.75 4.75 0 010-9.5zm0 1.5a3.25 3.25 0 100 6.5 3.25 3.25 0 000-6.5zm4.38-.88a1.13 1.13 0 110 2.26 1.13 1.13 0 010-2.26z"/>
-      </svg>
-    </a>
-
-    <!-- טיקטוק -->
-    <a href="https://www.tiktok.com/@dorbenyaish" target="_blank"
-       class="w-12 h-12 bg-black rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M15.75 2v2.873c.933.643 2.051 1.09 3.25 1.197v2.61a7.005 7.005 0 01-3.25-.812v7.881a5.75 5.75 0 11-5.75-5.75c.25 0 .493.018.73.053v2.515a3.25 3.25 0 103.25 3.25V2h1.77z"/>
-      </svg>
-    </a>
-
-    
-
-  </div>
-                      <div class="flex items-center mb-6">
-                          
-                              
-                                
-                            </a>
-                            
-                              
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                     <div class="md:w-1/2 p-10">
-          <form id="contactForm" class="space-y-6">
-            <div>
-              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">שם מלא</label>
-              <input type="text" id="name" name="from_name" required 
-                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1687A7]">
-            </div>
-            <div>
-              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">מייל</label>
-              <input type="email" id="email" name="reply_to" required
-                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1687A7]">
-            </div>
-            
-              <div>
-    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">טלפון</label>
-    <input type="tel" id="phone" name="phone" 
-           pattern="[0-9]{9,10}" 
-           class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1687A7]">
-  </div>
-            
-            <div>
-              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">איך אוכל לעזור?</label>
-              <textarea id="message" name="message" rows="4" required
-                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1687A7]"></textarea>
-            </div>
-            <div>
-              <!-- 👇 הכפתור שלך לשליחה -->
-              <button type="submit" 
-                      class="w-full px-6 py-3 bg-[#002a3e] text-white font-medium rounded-md hover:bg-[#276678] transition duration-300">
-                שלחו הודעה
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <!-- Footer -->
-    <footer class="py-10 bg-[#002a3e] text-white">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-2xl font-bold">דור</h1> <h1 class="text mb-3"></h1>
-            <div class="w-16 h-1 bg-[#1687A7] mx-auto mb-3"></div>
-            <p class="text-[#D3E0EA] text-sm">&copy; 2025 כל הזכויות שמורות</p>
-        </div>
-    </footer>
-
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
   <script>
-document.addEventListener('DOMContentLoaded', function() {
+    (function(){ emailjs.init("ZztxRN5yl88fnuQrK"); })();
+  </script>
 
-    // ✅ אפקט הופעה חלקה
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.1 });
+  <!-- לוגיקה כללית: הופעות, טופס, חיצים, אנימציות -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // הופעת סקשנים חלקה
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.section-fade').forEach(section => observer.observe(section));
 
-    document.querySelectorAll('.section-fade').forEach(section => {
-        observer.observe(section);
-    });
-
-    // ✅ שליחת טופס יצירת קשר
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      // טופס - שליחה דרך EmailJS
+      const form = document.getElementById('contactForm');
+      form.addEventListener('submit', function(e) {
         e.preventDefault();
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-
-        if (name && email && message) {
-            alert('תודה על פנייתך! אחזור אליך בהקדם.');
-            this.reset();
-        } else {
-            alert('אנא מלא את כל השדות');
-        }
-    });
-
-    // ✅ פונקציונליות סליידרים + כפתורים
-    document.querySelectorAll('.slider').forEach(slider => {
-        const items = slider.querySelectorAll('.slider-item');
-        const dots = slider.parentElement.querySelectorAll('.slider-dot');
-
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                slider.scrollTo({
-                    left: items[index].offsetLeft - slider.offsetLeft,
-                    behavior: 'smooth'
-                });
-
-                dots.forEach(d => d.classList.remove('active'));
-                dot.classList.add('active');
-                dots.forEach(d => d.style.backgroundColor = '#D3E0EA');
-                dot.style.backgroundColor = '#1687A7';
-            });
-        });
-
-        slider.addEventListener('scroll', () => {
-            let activeIndex = 0;
-            items.forEach((item, index) => {
-                const itemCenter = item.offsetLeft - slider.offsetLeft + item.offsetWidth / 2;
-                const sliderCenter = slider.scrollLeft + slider.offsetWidth / 2;
-                if (Math.abs(itemCenter - sliderCenter) < item.offsetWidth / 2) {
-                    activeIndex = index;
-                }
-            });
-
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === activeIndex);
-                dot.style.backgroundColor = i === activeIndex ? '#1687A7' : '#D3E0EA';
-            });
-        });
-    });
-
-});
-</script>
-
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96858a36912caf1f',t:'MTc1NDA1MzQ1MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
-  
-
-<!-- EmailJS script -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-<script>
-  (function(){
-    // מחבר את האתר שלך ל־EmailJS
-    emailjs.init("ZztxRN5yl88fnuQrK"); 
-  })();
-
-  // האזנה ללחיצה על כפתור "שלח"
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // לא לטעון מחדש את העמוד
-
-    emailjs.sendForm("service_xuvmaf3", "template_u8casnr", "#contactForm")
-      .then(() => {
-        alert("✅ ההודעה נשלחה בהצלחה!");
-        this.reset(); // לרוקן את השדות אחרי שליחה
-      }, (error) => {
-        console.error("❌ שגיאה:", error);
-        alert("שגיאה בשליחת ההודעה, נסה שוב.");
+        emailjs.sendForm("service_xuvmaf3", "template_u8casnr", "#contactForm")
+          .then(() => { alert("✅ ההודעה נשלחה בהצלחה!"); form.reset(); },
+                (error) => { console.error("❌ שגיאה:", error); alert("שגיאה בשליחת ההודעה, נסו שוב."); });
       });
-  });
 
-gsap.registerPlugin(ScrollTrigger);
-
-        // Hero Intro Animation
-        gsap.from("#hero h1, #hero p, #hero a", {
-            
-            y: 5,
-            duration: 3,
-            stagger: 0.2,
-            ease: "power2.out"
-        });
-
-// Breathing effect
-        gsap.to(".bg-parallax", {
-            y: "+=30",
-            duration: 5,
-            yoyo: true,
-            repeat: -1,
-            ease: "sine.inOut"
-        });
-
-gsap.from("header", {
-  opacity: 0,
-  scale: 1.1,
-  y: -50,
-  duration: 1.5,
-  ease: "power4.out"
-});
-
-gsap.from("header *", {
-  opacity: 0,
-  y: 30,
-  duration: 1,
-  stagger: 0.15,
-  delay: 0.5,
-  ease: "power3.out"
-});
-  
-  document.addEventListener("DOMContentLoaded", function () {
-  // אפקט כניסה להירו
-  gsap.from("header", {
-    opacity: 0,
-    scale: 1.05,
-    y: -50,
-    duration: 1.5,
-    ease: "power4.out"
-  });
-
-  // אפקט לכל האלמנטים שבתוך ההירו
-  gsap.from("header *", {
-    opacity: 0,
-    y: 30,
-    duration: 1,
-    stagger: 0.15,
-    delay: 0.3,
-    ease: "power3.out"
-  });
-});
-</script>
-<script>
-window.onload = function () {
-  // אפקט Fade+Slide ל-Hero
-  gsap.from("header", {
-    opacity: 0,
-    y: -100,
-    duration: 1.2,
-    ease: "power4.out"
-  });
-
-  // אפקט לכל הילדים של ה-Hero (כותרת, טקסט, כפתורים)
-  gsap.from("header .flex > *", {
-    opacity: 0,
-    y: 30,
-    duration: 0.8,
-    stagger: 0.2,
-    delay: 0.5,
-    ease: "power2.out"
-  });
-};
-</script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script>
-window.onload = function () {
-  // אפקט ל-Hero עצמו
-  gsap.fromTo(
-    "header",
-    { opacity: 0, y: -100 },
-    { opacity: 1, y: 0, duration: 1.2, ease: "power4.out" }
-  );
-
-  // אפקט לכותרת ותיאור בלבד
-  gsap.fromTo(
-    "header h1, header p",
-    { opacity: 0, y: 30 },
-    { opacity: 1, y: 0, duration: 0.8, stagger: 0.2, delay: 0.5, ease: "power2.out" }
-  );
-
-  // אפקט לכפתורים בנפרד (כדי שלא ייעלמו)
-  gsap.fromTo(
-    "header a",
-    { opacity: 0, scale: 0.9 },
-    { opacity: 1, scale: 1, duration: 0.6, delay: 1, ease: "back.out(1.7)" }
-  );
-};
-</script>
-
-<!-- חץ חזור למעלה -->
-<button id="backToTop" title="חזור לראש הדף" aria-label="חזור לראש הדף">
-  <!-- אייקון חץ שטוח ולבן -->
-  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
-  </svg>
-</button>
-
-<style>
-#backToTop {
-  position: fixed;
-  bottom: 30px;
-  left: 30px;
-  z-index: 1000;
-  background-color: #1687A7;
-  border: none;
-  padding: 12px;
-  border-radius: 9999px;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  pointer-events: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#backToTop svg {
-  width: 24px;
-  height: 24px;
-  stroke: white;
-}
-
-#backToTop.show {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-#backToTop:hover {
-  background-color: #276678;
-}
-</style>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const backToTop = document.getElementById("backToTop");
-
-  // מתי להראות את הכפתור
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      backToTop.classList.add("show");
-    } else {
-      backToTop.classList.remove("show");
-    }
-  });
-
-  // לחיצה על הכפתור = גלילה למעלה
-  backToTop.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  });
-});
-</script>
-<script src="https://www.youtube.com/iframe_api"></script>
-<script>
-  let players = [];
-
-  function onYouTubeIframeAPIReady() {
-    document.querySelectorAll('iframe[src*="youtube.com/embed"]').forEach((iframe, index) => {
-      const player = new YT.Player(iframe, {
-        events: {
-          'onStateChange': (event) => {
-            if (event.data === YT.PlayerState.PLAYING) {
-              players.forEach((p, i) => {
-                if (i !== index) p.pauseVideo();
-              });
-            }
-          }
-        }
+      // כפתור חזרה למעלה
+      const backToTop = document.getElementById("backToTop");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) backToTop.classList.add("show");
+        else backToTop.classList.remove("show");
       });
-      players.push(player);
+      backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+      // חיצים לסליידר עבודות
+      const track = document.getElementById('portTrack');
+      const prev  = document.getElementById('portPrev');
+      const next  = document.getElementById('portNext');
+      function scrollByAmount(dir){
+        const amount = Math.max(320, track.clientWidth * 0.9);
+        track.scrollBy({ left: dir * amount, behavior: 'smooth' });
+      }
+      prev && prev.addEventListener('click', () => scrollByAmount(-1));
+      next && next.addEventListener('click', () => scrollByAmount( 1));
+
+      // אנימציית כניסה פשוטה להירו
+      gsap.from("header", { opacity: 0, y: -80, duration: 1.1, ease: "power4.out" });
+      gsap.from("header *", { opacity: 0, y: 24, duration: .8, stagger: .08, delay: .25, ease: "power3.out" });
     });
-  }
-</script>
-<!-- כפתור וואטסאפ קבוע -->
-<a href="https://wa.me/972505323618" target="_blank" id="whatsappBtn" title="שלח הודעה בוואטסאפ" aria-label="שלח הודעה בוואטסאפ">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-    <path fill="white" d="M16.003 2.002c-7.736 0-14.001 6.264-14.001 14 0 2.469.645 4.882 1.87 7.008l-1.978 7.317 7.512-1.968a13.929 13.929 0 006.597 1.647h.001c7.736 0 14-6.264 14-14s-6.264-14.004-14.001-14.004zm0 25.998a11.943 11.943 0 01-6.09-1.657l-.436-.258-4.463 1.17 1.192-4.354-.283-.447a11.95 11.95 0 01-1.851-6.399c0-6.617 5.383-12 12.001-12 6.617 0 12 5.383 12 12s-5.383 12-12 12zm6.584-8.583c-.359-.18-2.121-1.043-2.45-1.163-.33-.12-.572-.18-.814.18s-.935 1.163-1.146 1.403c-.21.24-.42.27-.779.09-.359-.18-1.514-.557-2.884-1.777-1.066-.951-1.786-2.126-1.995-2.485-.21-.359-.022-.553.158-.732.162-.161.36-.42.539-.63.18-.21.24-.359.36-.598.12-.239.06-.449-.03-.628-.09-.18-.814-1.963-1.115-2.685-.293-.7-.591-.606-.814-.616l-.693-.01c-.24 0-.628.09-.957.449s-1.257 1.229-1.257 2.998 1.287 3.48 1.466 3.719c.18.239 2.538 3.873 6.152 5.43.859.371 1.53.592 2.054.758.864.275 1.65.236 2.273.143.693-.104 2.121-.869 2.422-1.708.3-.839.3-1.562.21-1.708-.09-.15-.329-.24-.688-.42z"/>
-  </svg>
-</a>
+  </script>
 
-<style>
-#whatsappBtn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 1000;
-  background-color: #25D366;
-  border: none;
-  padding: 12px;
-  border-radius: 9999px;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-#whatsappBtn svg {
-  width: 28px;
-  height: 28px;
-}
-#whatsappBtn:hover {
-  background-color: #1ebe5d;
-  transform: scale(1.05);
-}
-</style>
+  <!-- חץ חזור למעלה -->
+  <button id="backToTop" title="חזור לראש הדף" aria-label="חזור לראש הדף">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+    </svg>
+  </button>
 
-
+  <!-- כפתור וואטסאפ קבוע -->
+  <a href="https://wa.me/972505323618" target="_blank" id="whatsappBtn" title="שלח הודעה בוואטסאפ" aria-label="שלח הודעה בוואטסאפ">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+      <path fill="white" d="M16.003 2.002c-7.736 0-14.001 6.264-14.001 14 0 2.469.645 4.882 1.87 7.008l-1.978 7.317 7.512-1.968a13.929 13.929 0 006.597 1.647h.001c7.736 0 14-6.264 14-14s-6.264-14.004-14.001-14.004zm0 25.998a11.943 11.943 0 01-6.09-1.657l-.436-.258-4.463 1.17 1.192-4.354-.283-.447a11.95 11.95 0 01-1.851-6.399c0-6.617 5.383-12 12.001-12 6.617 0 12 5.383 12 12s-5.383 12-12 12zm6.584-8.583c-.359-.18-2.121-1.043-2.45-1.163-.33-.12-.572-.18-.814.18s-.935 1.163-1.146 1.403c-.21.24-.42.27-.779.09-.359-.18-1.514-.557-2.884-1.777-1.066-.951-1.786-2.126-1.995-2.485-.21-.359-.022-.553.158-.732.162-.161.36-.42.539-.63.18-.21.24-.359.36-.598.12-.239.06-.449-.03-.628-.09-.18-.814-1.963-1.115-2.685-.293-.7-.591-.606-.814-.616l-.693-.01c-.24 0-.628.09-.957.449s-1.257 1.229-1.257 2.998 1.287 3.48 1.466 3.719c.18.239 2.538 3.873 6.152 5.43.859.371 1.53.592 2.054.758.864.275 1.65.236 2.273.143.693-.104 2.121-.869 2.422-1.708.3-.839.3-1.562.21-1.708-.09-.15-.329-.24-.688-.42z"/>
+    </svg>
+  </a>
 </body>
 </html>
