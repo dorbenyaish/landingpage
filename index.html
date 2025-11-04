@@ -163,10 +163,10 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="absolute inset-0 bg-gradient-to-r from-[#002a3e] to-[#326a85] opacity-100"></div>
         <div class="container mx-auto px-6 relative z-10">
             <div class="flex flex-col items-center text-center">
-                <h1 class="text-5xl md:text-8xl font-bold text mb-1">שלום, <span class="custom-color-secondary">אני דור</span></h1>
-                <p class="text-xl md:text-4xl text-[#D3E0EA] mb-8">תוכן בלי פוזות</p>
+                <h1 class="text-5xl md:text-8xl font-bold text mb-1">שלום! <span class="custom-color-secondary">אני דור</span></h1>
+                <p class="text-xl md:text-4xl text-[#D3E0EA] mb-8">יוצר תוכן ומנהל סושיאל</p>
                 <div class="w-20 h-0.5 bg-[#D3E0EA] mb-6"></div>
-                <h3 class="text-lg md:text-xl text-white max-w-2xl mb-8 font-light">יוצר תוכן, קריאייטיב ומנהל סושיאל שמאמין באותנטיות מעל הכל.</h3>
+                <h3 class="text-lg md:text-xl text-white max-w-2xl mb-8 font-light">עובד עם עסקים, אמנים ומותגים. הקו שלי הוא תוכן נקי, אותנטי, מותאם ומדויק למה שהקהל באמת רוצה לראות. אני מטפל בכל התהליך- משלב הרעיון והקריאייטיב, דרך צילום ועריכה, ועד ניהול עמודים ובניית אסטרטגיה.</h3>
                 <div class="flex flex-wrap gap-4 justify-center">
                     <a href="#portfolio" class="px-8 py-3 bg-white text-[#276678] rounded-full font-medium hover:bg-[#D3E0EA] transition duration-300 transform hover:scale-105">הצג עבודות</a>
                     <a href="#contact" class="px-8 py-3 border-2 border-white text-white rounded-full font-medium hover:bg-white hover:text-[#276678] transition duration-300 transform hover:scale-105">צור קשר</a>
@@ -243,7 +243,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
           </svg>
         </div>
-        <h3 class="font-bold text-xl">מיתוג</h3>
+        <h3 class="font-bold text-xl">שיווק דיגיטלי</h3>
       </div>
 
     </div>
@@ -265,7 +265,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold mb-4 custom-color-primary">אותנטיות</h3>
-                    <p class="text-gray-600">יצירת תוכן אמיתי שמשקף את הערכים והקול הייחודי של המותג שלך. תוכן בלי פוזות.</p>
+                    <p class="text-gray-600">יצירת תוכן אמיתי שמשקף את הערכים והקול הייחודי של המותג שלך.</p>
                     <div class="mt-6 h-1 w-20 bg-[#1687A7] mx-auto"></div>
                 </div>
                 
@@ -276,7 +276,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold mb-4 custom-color-primary">תוצאות</h3>
-                    <p class="text-gray-600">אסטרטגיה ממוקדת מטרה שמביאה לתוצאות מדידות ואפקטיביות, כולל ניתוח מגמות ועבודה דינמית ומותאמת.</p>
+                    <p class="text-gray-600">אסטרטגיה ממוקדת מטרה שמביאה לתוצאות מדידות ואפקטיביות.</p>
                     <div class="mt-6 h-1 w-20 bg-[#1687A7] mx-auto"></div>
                 </div>
                 
@@ -294,331 +294,172 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
     </section>
 
-   <!-- Portfolio Section (fixed sliders) -->
+  <!-- ===== עבודות נבחרות (Slider איכותי) ===== -->
 <section id="portfolio" class="py-20 section-fade" dir="rtl">
   <div class="container mx-auto px-6">
-    <h2 class="text-7xl font-bold text-center mb-4 custom-color-primary">פורטפוליו</h2>
-    <p class="text-xl text-center text-gray-600 mb-10 max-w-2xl mx-auto">עבודות נבחרות שמדגימות את הגישה האותנטית והיצירתית שלי לתוכן ומיתוג.</p>
+    <h2 class="text-7xl font-bold text-center mb-4 custom-color-primary">עבודות נבחרות</h2>
+    <p class="text-xl text-center text-gray-600 mb-10 max-w-2xl mx-auto">
+      כמה מהפרויקטים שלי ברשתות עם לקוחות שונים מתחומים שונים, כדי להמחיש את סגנון העבודה.
+    </p>
 
-    <style>
-      /* וידאו אנכי ביחס 9:16 */
-      .story-video { position: relative; max-width: 300px; width: 100%; overflow: hidden; }
-      .story-video { padding-top: 177.78%; }
-      @media (min-width: 1024px) { .story-video { height: 450px; } }
-      .story-video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    <div class="relative">
+      <!-- חיצים -->
+      <button id="portPrev"
+        class="hidden md:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-[#002a3e] text-white items-center justify-center shadow hover:scale-105 transition"
+        aria-label="הקודם">‹</button>
+      <button id="portNext"
+        class="hidden md:flex absolute -left-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-[#002a3e] text-white items-center justify-center shadow hover:scale-105 transition"
+        aria-label="הבא">›</button>
 
-      /* הסתרת סקרול אופקי יפה */
-      .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-      .hide-scrollbar::-webkit-scrollbar { display: none; }
+      <!-- מסילה נגללת -->
+      <div id="portTrack"
+        class="flex overflow-x-auto gap-5 pb-2 hide-scrollbar snap-x snap-mandatory"
+        aria-label="עבודות נבחרות" dir="ltr">
+        
+        <!-- 1. תרצה כהן – השקת שער לאישה (Reel) -->
+        <article class="min-w-[260px] max-w-[320px] snap-start flex-shrink-0 bg-[#eeeeee] rounded-xl overflow-hidden">
+          <div class="p-4">
+            <h3 class="text-lg font-bold custom-color-primary">תרצה כהן — השקת שער לאישה</h3>
+            <p class="text-sm text-gray-600">ריל השקה | קונספט, צילום, עריכה</p>
+          </div>
+          <div class="px-3 pb-4">
+            <div class="w-full aspect-[9/16] rounded-lg overflow-hidden">
+              <blockquote class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/reel/DQl5eLVDEzp/"
+                data-instgrm-version="14"
+                style="background:#FFF;border:0;border-radius:12px;box-shadow:none;margin:0 auto;max-width:540px;min-width:220px;width:100%;">
+              </blockquote>
+            </div>
+          </div>
+        </article>
 
-      /* נקודה פעילה */
-      .slider-dot { width: 12px; height: 12px; border-radius: 9999px; background: #D3E0EA; margin: 0 4px; }
-      .slider-dot.active { background: #1687A7; }
-    </style>
+        <!-- 2. יובל דיין – צילומי אולפן (Reel) -->
+        <article class="min-w-[260px] max-w-[320px] snap-start flex-shrink-0 bg-[#eeeeee] rounded-xl overflow-hidden">
+          <div class="p-4">
+            <h3 class="text-lg font-bold custom-color-primary">יובל דיין — צילומי אולפן</h3>
+            <p class="text-sm text-gray-600">ריל ויזואלי | אווירה וסטייל</p>
+          </div>
+          <div class="px-3 pb-4">
+            <div class="w-full aspect-[9/16] rounded-lg overflow-hidden">
+              <blockquote class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/reel/DOYEi8hjNjc/"
+                data-instgrm-version="14"
+                style="background:#FFF;border:0;border-radius:12px;box-shadow:none;margin:0 auto;max-width:540px;min-width:220px;width:100%;">
+              </blockquote>
+            </div>
+          </div>
+        </article>
 
-    <!-- ===== סליידר 1: דור – קמפיין השקה ===== -->
-    <h3 class="text-2xl font-bold text-right mb-4 custom-color-primary">דור- קמפיין השקה</h3>
-    <div class="mb-16 slider-wrapper">
-      <div class="relative">
-        <div class="slider flex overflow-x-auto pb-8 hide-scrollbar">
-          <!-- Slide 1 -->
-          <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
-            <div class="bg-[#eeeeee] rounded-xl overflow-hidden">
-              <div class="story-video">
-                <iframe src="https://www.youtube.com/embed/KpipnkMLiCQ?autoplay=1&loop=1&playlist=KpipnkMLiCQ&controls=0&modestbranding=1&rel=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-              </div>
-              <div class="p-6">
-                <h1 class="text-xl font-bold mt-4 custom-color-primary">לוגו ושפה עיצובית</h1>
-                <p class="text-gray-600 mt-2">מייצג את ערכי המותג שלכם על ידי גרפיקה וויזואליות תואמת אופי</p>
+        <!-- 3. סרטון אווירה אישי מהופעות (Reel) -->
+        <article class="min-w-[260px] max-w-[320px] snap-start flex-shrink-0 bg-[#eeeeee] rounded-xl overflow-hidden">
+          <div class="p-4">
+            <h3 class="text-lg font-bold custom-color-primary">אווירת הופעות</h3>
+            <p class="text-sm text-gray-600">סטורי-טלינג מהשטח</p>
+          </div>
+          <div class="px-3 pb-4">
+            <div class="w-full aspect-[9/16] rounded-lg overflow-hidden">
+              <blockquote class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/reel/DQUgWWbDZls/"
+                data-instgrm-version="14"
+                style="background:#FFF;border:0;border-radius:12px;box-shadow:none;margin:0 auto;max-width:540px;min-width:220px;width:100%;">
+              </blockquote>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. סרטון תדמית — Selvert Thermal (Reel) -->
+        <article class="min-w-[260px] max-w-[320px] snap-start flex-shrink-0 bg-[#eeeeee] rounded-xl overflow-hidden">
+          <div class="p-4">
+            <h3 class="text-lg font-bold custom-color-primary">Selvert Thermal — סרטון תדמית</h3>
+            <p class="text-sm text-gray-600">קריאייטיב, בימוי ותוכן</p>
+          </div>
+          <div class="px-3 pb-4">
+            <div class="w-full aspect-[9/16] rounded-lg overflow-hidden">
+              <blockquote class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/reel/DPJtrSPjDoN/"
+                data-instgrm-version="14"
+                style="background:#FFF;border:0;border-radius:12px;box-shadow:none;margin:0 auto;max-width:540px;min-width:220px;width:100%;">
+              </blockquote>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. סיכום משחק — מכבי פ"ת כדורסל (Reel) -->
+        <article class="min-w-[260px] max-w-[320px] snap-start flex-shrink-0 bg-[#eeeeee] rounded-xl overflow-hidden">
+          <div class="p-4">
+            <h3 class="text-lg font-bold custom-color-primary">מכבי פ"ת — סיכום משחק</h3>
+            <p class="text-sm text-gray-600">היילייטס, קצב וגריד</p>
+          </div>
+          <div class="px-3 pb-4">
+            <div class="w-full aspect-[9/16] rounded-lg overflow-hidden">
+              <blockquote class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/reel/DQhOLZ4jH9x/"
+                data-instgrm-version="14"
+                style="background:#FFF;border:0;border-radius:12px;box-shadow:none;margin:0 auto;max-width:540px;min-width:220px;width:100%;">
+              </blockquote>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. היילייט מתעדכן (לא ניתן להטמעה, כרטיס מקשר) -->
+        <article class="min-w-[260px] max-w-[320px] snap-start flex-shrink-0 bg-[#eeeeee] rounded-xl overflow-hidden">
+          <div class="p-4">
+            <h3 class="text-lg font-bold custom-color-primary">תיק עבודות מורחב — היילייט</h3>
+            <p class="text-sm text-gray-600">עוקב ומתעדכן באינסטגרם</p>
+          </div>
+          <div class="px-3 pb-5">
+            <div class="w-full aspect-[9/16] rounded-lg bg-white/70 border border-gray-200 flex items-center justify-center text-center p-4">
+              <div>
+                <div class="text-5xl mb-2">📌</div>
+                <p class="text-sm text-gray-700 mb-3">צפה בהיילייט המתעדכן: עוד דוגמאות חיות</p>
+                <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTM1NzM1MzI4OTQzMDMy?igsh=MW5jODdqM2lkYWN3dw"
+                   target="_blank"
+                   class="inline-block px-4 py-2 rounded-full bg-[#002a3e] text-white text-sm hover:bg-[#276678] transition">
+                  מעבר להיילייט
+                </a>
               </div>
             </div>
           </div>
-          <!-- Slide 2 -->
-          <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
-            <div class="bg-[#eeeeee] rounded-xl overflow-hidden">
-              <div class="story-video">
-                <iframe src="https://www.youtube.com/embed/yLU-QV4S9oQ?autoplay=1&loop=1&playlist=yLU-QV4S9oQ&controls=0&modestbranding=1&rel=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold mt-4 custom-color-primary">קריאייטיב טרנדי</h3>
-                <p class="text-gray-600 mt-2">מייצר תוכן שתואם את המגמות הטרנדיות והויראליות ברשתות</p>
-              </div>
-            </div>
-          </div>
-          <!-- Slide 3 -->
-          <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
-            <div class="bg-[#eeeeee] rounded-xl overflow-hidden">
-              <div class="story-video">
-                <iframe src="https://www.youtube.com/embed/2V6IOmkG96A?autoplay=1&loop=1&playlist=2V6IOmkG96A&controls=0&modestbranding=1&rel=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold mt-4 custom-color-primary">תוכן סטורי יומיומי</h3>
-                <p class="text-gray-600 mt-2">מניע את הלקוחות שלכם לפעולה בדרך יצירתית</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        </article>
 
-        <!-- נקודות -->
-        <div class="flex justify-center mt-4">
-          <button class="slider-dot active" data-index="0"></button>
-          <button class="slider-dot" data-index="1"></button>
-          <button class="slider-dot" data-index="2"></button>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===== סליידר 2: נוי – מדריכת יוגה ===== -->
-    <h3 class="container mx-auto px-6 text-2xl font-bold text-right mb-4 custom-color-primary">נוי- מדריכת יוגה</h3>
-    <div class="mb-16 slider-wrapper">
-      <div class="relative">
-        <div class="slider flex overflow-x-auto pb-8 hide-scrollbar">
-          <!-- Slide 1 -->
-          <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
-            <div class="bg-[#002a3e] rounded-xl overflow-hidden">
-              <div class="story-video">
-                <iframe src="https://www.youtube.com/embed/6MRHrrB7D40?autoplay=1&loop=1&playlist=6MRHrrB7D40&controls=0&modestbranding=1&rel=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold mt-4 custom-color-secondary">לוגו ושפה עיצובית</h3>
-                <p class="custom-color-secondary mt-2">מתאים את הויזואליות של המותג לערכים ולהעדפות שלכם</p>
-              </div>
-            </div>
-          </div>
-          <!-- Slide 2 -->
-          <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
-            <div class="bg-[#002a3e] rounded-xl overflow-hidden">
-              <div class="story-video">
-                <iframe src="https://www.youtube.com/embed/F3EcUHlPTVg?autoplay=1&loop=1&playlist=F3EcUHlPTVg&controls=0&modestbranding=1&rel=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold mt-4 custom-color-secondary">סרטון תדמית</h3>
-                <p class="custom-color-secondary mt-2">מעביר ללקוחות שלכם את האווירה שלכם דרך המסך</p>
-              </div>
-            </div>
-          </div>
-          <!-- Slide 3 -->
-          <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
-            <div class="bg-[#002a3e] rounded-xl overflow-hidden">
-              <div class="story-video">
-                <iframe src="https://www.youtube.com/embed/I6gs44lBGHA?autoplay=1&loop=1&playlist=I6gs44lBGHA&controls=0&modestbranding=1&rel=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold mt-4 custom-color-secondary">תוכן וידאו</h3>
-                <p class="custom-color-secondary mt-2">מספר ללקוחות שלכם מי אתם בדרך יצירתית ושקופה</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- נקודות -->
-        <div class="flex justify-center mt-4">
-          <button class="slider-dot active" data-index="0"></button>
-          <button class="slider-dot" data-index="1"></button>
-          <button class="slider-dot" data-index="2"></button>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===== סליידר 3: עמית לכלב – מאלפת כלבים ===== -->
-    <h3 class="container mx-auto px-6 text-2xl font-bold text-right mb-4 custom-color-primary">עמית לכלב- מאלפת כלבים</h3>
-    <div class="slider-wrapper">
-      <div class="relative">
-        <div class="slider flex overflow-x-auto pb-8 hide-scrollbar">
-          <!-- Slide 1 -->
-          <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
-            <div class="bg-[#eeeeee] rounded-xl overflow-hidden">
-              <div class="story-video">
-                <iframe src="https://www.youtube.com/embed/f3ehCfZZE_I?autoplay=1&loop=1&playlist=f3ehCfZZE_I&controls=0&modestbranding=1&rel=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold mt-4 custom-color-primary">שפת מותג ויזואלית</h3>
-                <p class="text-gray-600 mt-2">מייצר לעסק שלכם שפה גרפית שתואמת את הערכים שלכם</p>
-              </div>
-            </div>
-          </div>
-          <!-- Slide 2 -->
-          <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
-            <div class="bg-[#eeeeee] rounded-xl overflow-hidden">
-              <div class="story-video">
-                <iframe src="https://www.youtube.com/embed/8IgkY1lxSUk?autoplay=1&loop=1&playlist=8IgkY1lxSUk&controls=0&modestbranding=1&rel=0&enablejsapi=1"
- frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold mt-4 custom-color-primary">סרטון תדמית</h3>
-                <p class="text-gray-600 mt-2">מייצר נוכחות דיגיטלית והיכרות לקהל ברשתות</p>
-              </div>
-            </div>
-          </div>
-          <!-- Slide 3 -->
-          <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
-            <div class="bg-[#eeeeee] rounded-xl overflow-hidden">
-              <div class="story-video">
-                <iframe src="https://www.youtube.com/embed/k-4AWZg1xAk?autoplay=1&loop=1&playlist=k-4AWZg1xAk&controls=0&modestbranding=1&rel=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold mt-4 custom-color-primary">תוכן וידאו</h3>
-                <p class="text-gray-600 mt-2">מייצר תכנים שיגרמו לקהל שלכם להכיר אתכם ולחשיפה ברשתות</p>
-              </div>
-            </div>
-          </div>
-          <!-- Slide 4 -->
-          <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
-            <div class="bg-[#eeeeee] rounded-xl overflow-hidden">
-              <div class="story-video">
-                <iframe src="https://www.youtube.com/embed/gbGuvoZYihk?autoplay=1&loop=1&playlist=gbGuvoZYihk&controls=0&modestbranding=1&rel=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold mt-4 custom-color-primary">שפת מותג באינסטגרם</h3>
-                <p class="text-gray-600 mt-2">הופך את הפרופיל שלכם לאטרקטיבי ומושך</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- נקודות -->
-        <div class="flex justify-center mt-4">
-          <button class="slider-dot active" data-index="0"></button>
-          <button class="slider-dot" data-index="1"></button>
-          <button class="slider-dot" data-index="2"></button>
-          <button class="slider-dot" data-index="3"></button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- JS: חיבור כפתורים לכל סליידר בנפרד -->
-  <script>
-    (function () {
-      function setupSlider(wrapper) {
-        const slider = wrapper.querySelector('.slider');
-        const items  = wrapper.querySelectorAll('.slider-item');
-        const dots   = wrapper.querySelectorAll('.slider-dot');
-
-        // קפיצה לשקופית מתוך הנקודה
-        dots.forEach((dot) => {
-          dot.addEventListener('click', () => {
-            const idx = parseInt(dot.dataset.index, 10) || 0;
-            const target = items[idx];
-            if (!target) return;
-            slider.scrollTo({
-              left: target.offsetLeft - slider.offsetLeft,
-              behavior: 'smooth'
-            });
-          });
-        });
-
-        // עדכון נקודות בזמן גלילה
-        const updateActiveDot = () => {
-          let activeIndex = 0;
-          items.forEach((item, i) => {
-            const itemCenter = item.offsetLeft - slider.offsetLeft + item.offsetWidth / 2;
-            const sliderCenter = slider.scrollLeft + slider.offsetWidth / 2;
-            if (Math.abs(itemCenter - sliderCenter) < item.offsetWidth / 2) {
-              activeIndex = i;
-            }
-          });
-          dots.forEach((d, i) => d.classList.toggle('active', i === activeIndex));
-        };
-
-        slider.addEventListener('scroll', updateActiveDot, { passive: true });
-        // עדכון ראשוני
-        updateActiveDot();
-      }
-
-      document.querySelectorAll('#portfolio .slider-wrapper').forEach(setupSlider);
-    })();
-  </script>
-</section>
-
-
-<!-- Testimonials Slider (same pattern as Portfolio) -->
-<section id="testimonials" class="py-20 bg-[#002a3e] text-white section-fade" dir="rtl">
-  <div class="container mx-auto px-6">
-    <h1 class="text-5xl font-bold text-center mb-10">מה אומרים עליי?</h1>
-
-    <div class="mb-16">
-      <div class="relative">
-        <!-- המסילה זהה לזו של הפורטפוליו -->
-        <div class="slider flex overflow-x-auto pb-8 hide-scrollbar">
-          <!-- Slide 1 -->
-          <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
-            <div class="bg-white bg-opacity-10 p-8 rounded-xl backdrop-filter backdrop-blur-sm">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#D3E0EA] mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-              </svg>
-              <h2 class="mb-6 text-2xl text-[#D3E0EA]">
-                "דור הצליח לתפוס את המהות של המקצוע שלי ולהעביר אותה בצורה אותנטית ומדויקת. התוצאות היו מעבר לציפיות שלי!"
-              </h2>
-              <div class="flex items-center">
-                <div class="w-16 h-16 rounded-full bg-[#D3E0EA] flex items-center justify-center ml-4">
-                  <span class="text-[#276678] font-bold">עז</span>
-                </div>
-                <div class="leading-tight">
-                  <h4 class="font-bold text-2xl">עמית זמל</h4>
-                  <h4 class="text-[#D3E0EA] text-xl">מאלפת כלבים</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 2 -->
-          <div class="slider-item min-w-full md:min-w-[80%] lg:min-w-[70%] flex-shrink-0 px-4">
-            <div class="bg-white bg-opacity-10 p-8 rounded-xl backdrop-filter backdrop-blur-sm">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#D3E0EA] mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-              </svg>
-              <h2 class="mb-6 text-2xl text-[#D3E0EA]">
-                "העבודה עם דור שינתה לחלוטין את הנוכחות הדיגיטלית שלי. הוא הביא רעיונות חדשניים ויצירתיים שהתחברו בצורה מושלמת לקהל שלי."
-              </h2>
-              <div class="flex items-center">
-                <div class="w-16 h-16 rounded-full bg-[#D3E0EA] flex items-center justify-center ml-4">
-                  <span class="text-[#276678] font-bold">נו</span>
-                </div>
-                <div class="leading-tight">
-                  <h4 class="font-bold text-2xl">נוי ואקנין</h4>
-                  <h4 class="text-[#D3E0EA] text-xl">מדריכת יוגה</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- אפשר לשכפל שקופיות נוספות באותו פורמט -->
-        </div>
-
-        <!-- הנקודות חייבות להיות בתוך אותו הורה של .slider -->
-        <div class="flex justify-center mt-4">
-          <button class="w-3 h-3 rounded-full bg-[#D3E0EA] mx-1 focus:outline-none slider-dot active" data-index="0"></button>
-          <button class="w-3 h-3 rounded-full bg-[#D3E0EA] mx-1 focus:outline-none slider-dot" data-index="1"></button>
-        </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- סגנון עזר לסקרול נקי -->
+<style>
+  .hide-scrollbar { -ms-overflow-style:none; scrollbar-width:none; }
+  .hide-scrollbar::-webkit-scrollbar { display:none; }
+</style>
 
+<!-- לוגיקת חיצים + טעינת embed של אינסטגרם -->
 <script>
-(function(){
-  const track = document.getElementById('testimonials-track');
-  const slides = track.children.length;
-  let index = 0;
+  (function initPortfolio(){
+    // טעינת סקריפט ההטמעה (פעם אחת)
+    function loadIG(){
+      if (window.instgrm) { window.instgrm.Embeds.process(); return; }
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = "https://www.instagram.com/embed.js";
+      s.onload = function(){ window.instgrm && window.instgrm.Embeds.process(); };
+      document.head.appendChild(s);
+    }
+    loadIG();
 
-  function goToSlide(i){
-    if(i < 0) i = slides - 1;
-    if(i >= slides) i = 0;
-    index = i;
-    track.style.transform = `translateX(-${index * 50}%)`;
-  }
+    // חיצים לגלילה
+    const track = document.getElementById('portTrack');
+    const prev  = document.getElementById('portPrev');
+    const next  = document.getElementById('portNext');
 
-  document.getElementById('next').addEventListener('click', () => goToSlide(index + 1));
-  document.getElementById('prev').addEventListener('click', () => goToSlide(index - 1));
-})();
+    function scrollByAmount(dir){
+      const amount = Math.max(320, track.clientWidth * 0.9);
+      track.scrollBy({ left: dir * amount, behavior: 'smooth' });
+    }
+    prev && prev.addEventListener('click', () => scrollByAmount(-1));
+    next && next.addEventListener('click', () => scrollByAmount( 1));
+  })();
 </script>
-
-
-
-
-
 
 
 
@@ -722,7 +563,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <!-- Footer -->
     <footer class="py-10 bg-[#002a3e] text-white">
         <div class="container mx-auto px-6 text-center">
-            <h1 class="text-2xl font-bold">דור</h1> <h1 class="text mb-3">תוכן בלי פוזות.</h1>
+            <h1 class="text-2xl font-bold">דור</h1> <h1 class="text mb-3"></h1>
             <div class="w-16 h-1 bg-[#1687A7] mx-auto mb-3"></div>
             <p class="text-[#D3E0EA] text-sm">&copy; 2025 כל הזכויות שמורות</p>
         </div>
